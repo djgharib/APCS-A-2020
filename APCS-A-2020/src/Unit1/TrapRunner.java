@@ -17,16 +17,3 @@ public class TrapRunner
 		System.out.println( Trap.area( 11, 8, 5) );
 	}
 }
-
-
-/*
-EXPECTED OUTPUT
-
-9.0
-38.5
-51.0
-33.0
-34.0
-47.5
-
-*/
