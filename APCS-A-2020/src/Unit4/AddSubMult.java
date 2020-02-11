@@ -1,3 +1,4 @@
+package Unit4;
 //(c) A+ Computer Science
 //www.apluscompsci.com
 //Name -
@@ -7,8 +8,19 @@ import java.util.Scanner;
 
 public class AddSubMult
 {
-	public static double check( double a, double b )
+	private static double x, y;
+	public static double check(double a, double b )
 	{
-		return 0;
+		x = a;
+		y = b;
+		if (x>y) {
+			return (x-y);
+		}
+		else if(x<y) {
+			return (y-x);
+		}
+		else {
+			return (x*y);
+		}
 	}
 }
