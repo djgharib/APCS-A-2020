@@ -155,7 +155,7 @@ public class Review {
     // read in the file contents into a string using the textToString method with the filename
 
     // set up a sentimentTotal variable
-
+	  int sentimentTotal = 0;
     // loop through the file contents 
 
        // find each word
@@ -178,7 +178,7 @@ public class Review {
     // call the totalSentiment method with the fileName
 
     // determine number of stars between 0 and 4 based on totalSentiment value 
-    int stars;
+    int stars = 0;
     // write if statements here
 
 
