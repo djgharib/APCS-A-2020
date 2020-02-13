@@ -8,6 +8,6 @@ public class AvgLen
 {
    public static double go( String a, String b )
 	{
-		return 0;
+		return 0.5*(a.length()+b.length());
 	}
 }
