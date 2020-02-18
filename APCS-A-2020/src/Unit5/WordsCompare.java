@@ -11,35 +11,22 @@ import static java.lang.System.*;
 
 public class WordsCompare
 {
-	private String wordOne, wordTwo;
-   private int compare;
+	private static String wordOne, wordTwo;
 
-	public WordsCompare()
+	public static void compareCheck(String one, String two)
 	{
-	}
-
-	public WordsCompare(String one, String two)
-	{
-	}
-
-	public void setWords(String one, String two)
-	{
-
-	}
-
-	public void compare()
-	{
-	}
-
-	public String toString()
-	{
-		if(compare<0)
-		{
-			return wordOne + " should be placed before " + wordTwo + "\n";
-		}
-		else
-		{
-			return wordOne + " should be placed after " + wordTwo + "\n";
+		for(int a = 0; a<one.length() || a<two.length(); a++) {
+			wordOne = one;
+			wordTwo = two;
+			if (wordOne.charAt(a)>wordTwo.charAt(a)){
+				System.out.println(wordTwo+" should be placed before "+wordOne);
+			}
+			else if (wordTwo.charAt(a)>wordOne.charAt(a)) {
+				System.out.println(wordTwo+" should be placed after "+wordOne);
+			}
+			else {
+				a++;
+			}
 		}
 	}
 }
