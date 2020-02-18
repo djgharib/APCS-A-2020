@@ -13,6 +13,14 @@ public class StringEqualityRunner
 {
 	public static void main( String args[] )
 	{
-		StringEquality("one", "two");
+		StringEquality.stringCheck("hello", "goodbye");
+		StringEquality.stringCheck("one", "two");
+		StringEquality.stringCheck("three", "four");
+		StringEquality.stringCheck("TCEA", "UIL");
+		StringEquality.stringCheck("State", "Champions");
+		StringEquality.stringCheck("ABC", "ABC");
+		StringEquality.stringCheck("ABC", "CBA");
+		StringEquality.stringCheck("Same", "Same");
+		
 	}
 }
