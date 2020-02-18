@@ -153,14 +153,16 @@ public class Review {
   public static double totalSentiment(String filename)
   {
     // read in the file contents into a string using the textToString method with the filename
-
+Review.textToString("src/ConsumerLab/simpleReview.txt");
     // set up a sentimentTotal variable
 	  int sentimentTotal = 0;
     // loop through the file contents 
-
-       // find each word
-       // add in its sentimentVal
-       // set the file contents to start after this word
+	  String wordLoop = "";
+	  String review = textToString(filename);
+	  String reviewStart = "";
+       for (int i = 0; i < review.length(); i++) {
+    	   
+       }
    
    
 

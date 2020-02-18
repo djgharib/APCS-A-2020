@@ -6,7 +6,7 @@ import java.util.Scanner;
 class Main {
 	public static void main(String[] args) {
 		
-		System.out.println(Review.sentimentVal("pleased"));
+		System.out.println(Review.sentimentVal(0.5));
 		// test reading from files
 		// read in the positive adjectives in postiveAdjectives.txt
 		try {
