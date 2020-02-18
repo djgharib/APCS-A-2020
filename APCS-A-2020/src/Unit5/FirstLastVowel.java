@@ -12,7 +12,7 @@ public class FirstLastVowel
 		if(a.charAt(0) == 'a' || a.charAt(a.length()-1) == 'a') {
 			return "yes";
 		}
-		else if(a.charAt(0) == 'e' || a.charAt(a.length()-1) == 'e') {
+		if(a.charAt(0) == 'e' || a.charAt(a.length()-1) == 'e') {
 			return "yes";
 		}
 		else if(a.charAt(0) == 'i' || a.charAt(a.length()-1) == 'i') {
