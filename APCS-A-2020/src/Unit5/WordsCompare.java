@@ -11,22 +11,15 @@ import static java.lang.System.*;
 
 public class WordsCompare
 {
-	private static String wordOne, wordTwo;
+	private static String wordOne, wordTwo, x;
 
 	public static void compareCheck(String one, String two)
 	{
-		for(int a = 0; a<one.length() || a<two.length(); a++) {
-			wordOne = one;
-			wordTwo = two;
-			if (wordOne.charAt(a)>wordTwo.charAt(a)){
-				System.out.println(wordTwo+" should be placed before "+wordOne);
+			if(one.compareTo(two)>0) {
+				System.out.println(one+" should be placed before "+two);
 			}
-			else if (wordTwo.charAt(a)>wordOne.charAt(a)) {
-				System.out.println(wordTwo+" should be placed after "+wordOne);
+			else if (one.compareTo(two)<0) {
+				System.out.println(one+" should be placed after "+two);
 			}
-			else {
-				a++;
-			}
-		}
-	}
+}
 }
