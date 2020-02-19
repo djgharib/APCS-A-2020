@@ -7,7 +7,7 @@ import static java.lang.System.*;
 
 public class Perfect
 {
-   private static int number;
+   private static int number, num1;
 
 	//add constructors
 
@@ -16,6 +16,7 @@ public class Perfect
 	public static boolean isPerfect(int num)
 	{
 		number = 0;
+		num1 = num;
 		for (int i = 1; i<num; i++) {
 			if(num%i ==0) {
 				number+=i;
@@ -31,10 +32,10 @@ public class Perfect
 
 	public static String toString(boolean perfection) {
 		if (perfection == true) {
-			return number + " is perfect.";
+			return num1 + " is perfect.";
 		}
 		else {
-			return number + " is not perfect.";
+			return num1 + " is not perfect.";
 		}
 	}
 	
