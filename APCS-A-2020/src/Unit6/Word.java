@@ -18,7 +18,7 @@ public class Word
 		for(int x = s.length()-1; x>-1; x--) {
 			System.out.print(s.charAt(x));
 		}
-		System.out.println("\n" + s);
+		System.out.println("\n" + s + "\n\n");
 	}
 
 
