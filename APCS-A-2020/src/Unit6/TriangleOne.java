@@ -7,22 +7,10 @@ import static java.lang.System.*;
 
 public class TriangleOne
 {
-	private String word;
-
-	public TriangleOne()
+	public static void construct(String s)
 	{
-		word="";
-	}
-
-	public TriangleOne(String s)
-	{
-	}
-
-	public void setWord(String s)
-	{
-	}
-
-	public void print( )
-	{
+		for (int x=s.length(); x>0; x--) {
+			System.out.println(s.substring(0, x));
+		}
 	}
 }
