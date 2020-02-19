@@ -9,6 +9,10 @@ public class WordRunner
 {
 	public static void main ( String[] args )
 	{
-		Word.wordCheck("test string");
+		Word.wordCheck("Hello");
+		Word.wordCheck("World");
+		Word.wordCheck("JukeBox");
+		Word.wordCheck("TCEA");
+		Word.wordCheck("UIL");
 	}
 }
