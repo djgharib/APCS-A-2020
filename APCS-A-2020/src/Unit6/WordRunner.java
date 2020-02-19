@@ -9,6 +9,6 @@ public class WordRunner
 {
 	public static void main ( String[] args )
 	{
-		//add test cases		
+		Word.wordCheck("test string");
 	}
 }
