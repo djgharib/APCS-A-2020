@@ -6,7 +6,6 @@ import java.util.Scanner;
 class Main {
 	public static void main(String[] args) {
 		
-		System.out.println(Review.sentimentVal("test"));
 		// test reading from files
 		// read in the positive adjectives in postiveAdjectives.txt
 		try {
@@ -20,5 +19,7 @@ class Main {
 		} catch (Exception e) {
 			System.out.println("Error reading or parsing postitiveAdjectives.txt\n" + e);
 		}
+		System.out.println(Review.totalSentiment("src/ConsumerLab/simpleReview.txt"));
+		System.out.println(Review.starRating("src/ConsumerLab/simpleReview.txt"));
 	}
 }

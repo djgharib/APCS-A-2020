@@ -155,13 +155,19 @@ public class Review {
     // read in the file contents into a string using the textToString method with the filename
 Review.textToString("src/ConsumerLab/simpleReview.txt");
     // set up a sentimentTotal variable
-	  int sentimentTotal = 0;
+	  double sentimentTotal = 0;
     // loop through the file contents 
-	  String wordLoop = "";
+	  String word = "";
 	  String review = textToString(filename);
 	  String reviewStart = "";
        for (int i = 0; i < review.length(); i++) {
-    	   
+    	   if (review.substring(i, i+1).equals(" ") || i+1 == review.length()) {
+    		   sentimentTotal += sentimentVal(word);
+    		   word = "";
+    	   }
+    	   else {
+    		   word+=review.substring(i, i+1);
+    	   }
        }
    
    
@@ -178,14 +184,32 @@ Review.textToString("src/ConsumerLab/simpleReview.txt");
   public static int starRating(String filename)
   {
     // call the totalSentiment method with the fileName
-
+	double totalSent = Review.totalSentiment("src/ConsumerLab/simpleReview.txt");
     // determine number of stars between 0 and 4 based on totalSentiment value 
     int stars = 0;
     // write if statements here
-
-
-  
+    if(totalSent>=5) {
+    	stars = 4;
+    }
+    else if (totalSent>=3) {
+    	stars = 3;
+    }
+    else if (totalSent>=0) {
+    	stars = 2;
+    }
+    else if (totalSent>=-3) {
+    	stars = 1;
+    }
+    else{
+    	stars = 0;
+    }
     // return number of stars
     return stars; 
+  }
+  
+  public static String fakeReview(String filename) {
+	  String reviewMod = filename;
+	  return reviewMod;
+	  
   }
 }
