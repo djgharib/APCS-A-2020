@@ -14,5 +14,7 @@ public class WordRunner
 		Word.wordCheck("JukeBox");
 		Word.wordCheck("TCEA");
 		Word.wordCheck("UIL");
+		int gamer = 100000;
+		System.out.println(gamer*4000);
 	}
 }
