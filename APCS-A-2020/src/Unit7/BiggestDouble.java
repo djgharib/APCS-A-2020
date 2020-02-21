@@ -7,7 +7,7 @@ package Unit7;
 import static java.lang.System.*;
 
 public class BiggestDouble {
-	private double one, two, three, four;
+	private static double one, two, three, four;
 
 	public BiggestDouble() {
 		this(0, 0, 0, 0);
@@ -20,14 +20,14 @@ public class BiggestDouble {
 		four = d;
 	}
 
-	public void setDoubles(double a, double b, double c, double d) {
+	public static void setDoubles(double a, double b, double c, double d) {
 		one = a;
 		two = b;
 		three = c;
 		four = d;
 	}
 
-	public double getBiggest() {
+	public static double getBiggest() {
 		if (one > two && one > three && one > four) {
 			return one;
 		} else if (two > three && two > four) {
@@ -40,6 +40,6 @@ public class BiggestDouble {
 	}
 
 	public String toString() {
-		return "";
+		return one + " " + two + " " + three + " " + four;
 	}
 }
