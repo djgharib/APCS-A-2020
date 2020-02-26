@@ -26,19 +26,27 @@ public class TriangleFive {
 
 	public static void setAmount(int amt) {
 		amount = amt;
-		for (int z = amount; z > 0; z--) {
-			for (int n = amount; n > 0; n--) {
-				for (int i = amount; i > 0; i--) {
+		int length = amt;
+		int rowControl = amt;
+		for(int rowPrint = 1; rowPrint<=amt; rowPrint++) {
+			letter = letterOverride;
+			for(int row = 1; row<=rowControl; row++) {
+				for(int tempLength = 1; tempLength<=length; tempLength++) {
 					System.out.print(letter);
 				}
 				System.out.print(" ");
-				letter--;
-				amount--;
+				letter++;
+				length--;
+				if(letter>90) {
+					letter=65;
+				}
+				
 			}
-			amount = amt;
-			letter = letterOverride;
+			length = amt;
+			rowControl--;
 			System.out.println();
 		}
+		System.out.println();
 	}
 
 	public String toString() {
