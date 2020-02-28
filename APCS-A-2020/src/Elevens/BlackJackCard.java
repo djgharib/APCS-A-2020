@@ -3,7 +3,7 @@ package Elevens;
 //www.apluscompsci.com
 //Name -
 
-public class BlackJackCard extends Card
+/*public class BlackJackCard extends Card
 {
   	//constructors
   	public BlackJackCard( String s, int f)
@@ -26,4 +26,4 @@ public class BlackJackCard extends Card
   	{
   		return super.toString() + " " + getValue();
   	}
- }
+ }*/

@@ -10,8 +10,8 @@ public class DeckRunner
 	public static void main( String args[] )
 	{
 		Deck test = new Deck();
-		
-		System.out.println( "All cards in order." );
+		System.out.print(test);
+		/*System.out.println( "All cards in order." );
 		for( int j = 1; j <= 52; j++ )
 		{
 			System.out.println( test.dealCard() );
@@ -23,6 +23,6 @@ public class DeckRunner
 		for( int j = 1; j <= 52; j++ )
 		{
 			System.out.println( test.dealCard() );
-		}				
+		}*/
 	}
 }
