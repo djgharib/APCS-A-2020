@@ -22,21 +22,38 @@ public class Deck{
    	//set top to the top of the deck 51
    	public Deck() {
    		cards = new ArrayList<Card>();
-   		for(int i = 1; i<=4; i++) {
-   			for(int x = 1; i<=13; i++) {
-   				
-   				cards.add(new Card(SUITS[i], x));
+   		for(int i = 0; i<SUITS.length; i++) {
+   			for(int x = 0; x<13; x++) {
+   				cards.add(new Card(SUITS[i], FACE[x]));
    			}
    		}
+   		size = cards.size();
+   		top = size-1;
    	}
-   	//loop through all suits
-   		//loop through all faces 1 to 13
-   			//add a new TwentyOneCard to the deck
-
-   
    //make a dealCard() method that returns the top card
-   
+   public Card dealCard() {
+	   Card topCard = cards.get(top);
+	   top--;
+	   size--;
+	   return topCard;
+   }
    //write a shuffle() method
    	//use Colletions.shuffle
    	//reset the top card 
+   public List shuffle() {
+	   size = cards.size();
+	   top = size-1;
+	   Collections.shuffle(cards);
+	   return cards;
+   }
+   
+   
+   
+   	public String toString(){
+   		String temp = "";
+   		for(int x = 0; x<cards.size(); x++) {
+   			temp+="\n" + cards.get(x);
+   		}
+   		return temp;
+   	}
 }

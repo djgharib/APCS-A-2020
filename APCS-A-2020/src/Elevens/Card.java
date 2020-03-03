@@ -10,12 +10,12 @@ public class Card {
 
 	// instance variables
 	private String suit;
-	private int face;
+	private String face;
 	private int ptValue;
 
 	// constructors
 
-	public Card(String cardSuit, int cardFace) {
+	public Card(String cardSuit, String cardFace) {
 		suit = cardSuit;
 		face = cardFace;
 	}
@@ -30,11 +30,11 @@ public class Card {
 		return suit;
 	}
 
-	public int getFace() {
+	public String getFace() {
 		return face;
 	}
 
-	public void setFace(int newFace) {
+	public void setFace(String newFace) {
 		face = newFace;
 	}
 

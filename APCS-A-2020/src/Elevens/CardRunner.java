@@ -10,22 +10,22 @@ public class CardRunner
 {
 	public static void main( String args[] )
 	{
-		Card one = new Card("SPADES", 9);
+		Card one = new Card("SPADES", "NINE");
 		out.println(one.getSuit());
 		out.println(one.getFace());
 
-		Card two = new Card("DIAMONDS", 1);
+		Card two = new Card("DIAMONDS", "ONE");
 		out.println(two);
-		two.setFace(3);
+		two.setFace("THREE");
 		out.println(two);
 
-		Card three = new Card("CLUBS", 4);
+		Card three = new Card("CLUBS", "FOUR");
 		out.println(three);
 
-		Card four = new Card("SPADES", 12);
+		Card four = new Card("SPADES", "QUEEN");
 		out.println(four);
 
-		Card five = new Card("HEARTS", 12);
+		Card five = new Card("HEARTS", "QUEEN");
 		out.println(five);
 	}
 }
