@@ -41,7 +41,7 @@ public class Shape
    public void draw(Graphics window)
    {
       window.setColor(color);
-      window.fillRect(xPos, yPos, width, height);
+      window.drawRect(xPos, yPos, width, height);
       //draw whatever you want
       //    ^
       //  [ :: ]
