@@ -38,7 +38,7 @@ public class Shape
    {
       window.setColor(color);
       window.fillRect(xPos, yPos, width, height);
-
+      window.fillRect(100, 200, 100, 200);
       //draw whatever you want
       //    ^
       //  [ :: ]
