@@ -28,7 +28,11 @@ public class Shape
    public Shape(int x, int y, int wid, int ht, Color col, int xSpd, int ySpd)
    {
 		xPos = x;
-		//finish this constructor
+		yPos = y;
+		width = wid;
+		height = ht;
+		color = col;
+		
    }
 
       /*
@@ -38,7 +42,6 @@ public class Shape
    {
       window.setColor(color);
       window.fillRect(xPos, yPos, width, height);
-      window.fillRect(100, 200, 100, 200);
       //draw whatever you want
       //    ^
       //  [ :: ]
