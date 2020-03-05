@@ -11,14 +11,17 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.List;
 import java.awt.Canvas;
 import javax.swing.JPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class MovingShapePanel extends JPanel implements Runnable
 {
 	private Shape sh;
+	public ArrayList<Shape> shapes;
 
 	public MovingShapePanel()
 	{
@@ -26,8 +29,11 @@ public class MovingShapePanel extends JPanel implements Runnable
 		setVisible(true);
 
 		//refer sh to a new Shape
-
-
+		sh = new Shape(300,300,50,50,Color.black,5,5);
+		Shape sh2 = new Shape(200,200,20,20,Color.black,5,5);
+		Shape sh3 = new Shape(400,400,80,80,Color.black,5,5);
+		shapes = new ArrayList<Shape>();
+		shapes.add(sh);
 		new Thread(this).start();
 	}
 
@@ -46,7 +52,11 @@ public class MovingShapePanel extends JPanel implements Runnable
 		window.drawString("CREATE YOUR OWN SHAPE!",40,40);
 
 		//tell sh to move and draw
-
+		//sh.moveAndDraw(window);
+		for(Shape s:shapes) {
+			s.moveAndDraw(window);
+		}
+		
 		//this code handles the left and right walls
 		/* uncomment once Shape is built
 		 *
