@@ -41,8 +41,7 @@ public class DeckTester {
 		String[] s2 = {"hearts"};
 		int[] v2 = {1, 2};
 		Deck d = new Deck(r2, s2, v2);
-		assert d.size() == 2 : "Initial size is " + d.size()
-			+ ". It should be 2.";
+		assert d.size() == 2 : "Initial size is " + d.size() + ". It should be 2.";
 		assert !d.isEmpty() : "Initial deck is empty.";
 		boolean aceIsFirst, twoIsFirst;
 		Card c = d.deal();
