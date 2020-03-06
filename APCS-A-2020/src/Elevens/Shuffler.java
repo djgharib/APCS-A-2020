@@ -25,7 +25,7 @@ public class Shuffler {
 	 * @param args is not used.
 	 */
 	public static void main(String[] args) {
-		System.out.println("Results of " + SHUFFLE_COUNT + " consecutive perfect shuffles:");
+		/*System.out.println("Results of " + SHUFFLE_COUNT + " consecutive perfect shuffles:");
 		ArrayList<Card> values1 = new ArrayList<Card>();
 		for (int i = 0; i < values1.size(); i++) {
 			values1[i] = i;
@@ -53,7 +53,7 @@ public class Shuffler {
 			}
 			System.out.println();
 		}
-		System.out.println();
+		System.out.println();*/
 	}
 
 	/**
