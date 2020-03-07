@@ -14,6 +14,7 @@ import static java.lang.System.*;
 public class ToyStore
 {
 	private ArrayList<Toy> toyList;
+	public String[] toyArray;
 
 	public ToyStore()
 	{
@@ -40,7 +41,7 @@ public class ToyStore
 				toyArray[wordCount] = (toys.substring(lastSpace, i+1));
 			}
 		}
-		System.out.println(Arrays.toString(toyArray));
+		
 	}
   
   	public Toy getThatToy( String nm )
@@ -50,6 +51,18 @@ public class ToyStore
   
   	public String getMostFrequentToy()
   	{
+  		ArrayList<String> arrayCheck = new ArrayList<String>();
+  		int[] 
+  		for (int x = 0; x<toyArray.length; x++) {
+  			arrayCheck.add(toyArray[x]);
+  		}
+  		for(int x = 0; x<arrayCheck.size(); x++) {
+  			for(int y = 1; y<=arrayCheck.size(); y++) {
+  				if(arrayCheck.get(y)==arrayCheck.get(x)) {
+  					
+  				}
+  			}
+  		}
   		return "";
   	}  
   
