@@ -52,7 +52,7 @@ public class ToyStore
   	public String getMostFrequentToy()
   	{
   		ArrayList<String> arrayCheck = new ArrayList<String>();
-  		int[] 
+  		ArrayList<Integer> numCheckArray = new ArrayList<Integer>();
   		for (int x = 0; x<toyArray.length; x++) {
   			arrayCheck.add(toyArray[x]);
   		}
