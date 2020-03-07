@@ -45,16 +45,16 @@ public class ToyStore39 {
 			}
 		}
 
-		for (String name : toyArray) {
-			boolean toyInList = false;
+		for (String toyType : toyArray) {
+			boolean inList = false;
 			for (Toy toy : toyList) {
-				if (toy.getName().equals(name)) {
+				if (toy.getName().equals(toyType)) {
 					toy.setCount(toy.getCount() + 1);
-					toyInList = true;
+					inList = true;
 				}
 			}
-			if (toyInList == false) {
-				toyList.add(new Toy(name));
+			if (inList == false) {
+				toyList.add(new Toy(toyType));
 			}
 
 		}
