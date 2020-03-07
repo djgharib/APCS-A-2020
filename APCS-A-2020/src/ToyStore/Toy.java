@@ -12,12 +12,14 @@ public class Toy
 
 	public Toy()
 	{
+		count = 1;
+		name = " ";
 	}
 
-	public Toy(String nm, int cnt)
+	public Toy(String nm)
 	{
+		count = 1;
 		name = nm;
-		count = cnt;
 	}
 	
 	public int getCount()

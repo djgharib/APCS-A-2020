@@ -9,7 +9,9 @@ public class ToyRunner
 {
 	public static void main(String[] args)
 	{
-		Toy game = new Toy("sorry", 1);
-		System.out.print(game);
+		Toy giJoe = new Toy("gi joe");
+        Toy sorry = new Toy("sorry");
+        out.println(giJoe.toString());
+        out.println(sorry.toString());
 	}
 }
