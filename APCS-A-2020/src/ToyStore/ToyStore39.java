@@ -15,8 +15,13 @@ import static java.lang.System.*;
 public class ToyStore39 {
 	ArrayList<Toy> toyList;
 
+	public void myName() {
+		System.out.println("Daniel Gharib");
+	}
+
 	public ToyStore39() {
 		toyList = new ArrayList<Toy>();
+		System.out.print(toyList);
 	}
 
 	public void loadToys(String toys) {
@@ -71,13 +76,10 @@ public class ToyStore39 {
 	}
 
 	public void sortToysByCount() {
+
 	}
 
 	public String toString() {
 		return "";
-	}
-
-	public void myName() {
-		System.out.println("Daniel Gharib");
 	}
 }
