@@ -9,18 +9,21 @@ public class Celebrity
 	/**
 	 * The clue to determine the celebrity
 	 */
-	String clue = "minecraft";
+	String clue;
 	/**
 	 * The answer or name of the celebrity.
 	 */
-		String answer = "notch";
+	String answer;
 	/**
 	 * Creates a Celebrity instance with the supplied answer and clue
 	 * @param answer
 	 * @param clue
 	 */
-	public Celebrity(String answer, String clue)
+	Celebrity test = new Celebrity(answer, clue);
+	public Celebrity(String ans, String clu)
 	{
+		answer = ans;
+		clue = clu;
 	}
 
 	/**
@@ -29,7 +32,7 @@ public class Celebrity
 	 */
 	public String getClue()
 	{
-		return null;
+		return clue;
 	}
 
 	/**
@@ -38,25 +41,25 @@ public class Celebrity
 	 */
 	public String getAnswer()
 	{
-		return null;
+		return answer;
 	}
 
 	/**
 	 * Updates the clue to the provided String.
 	 * @param clue The new clue.
 	 */
-	public void setClue(String clue)
+	public void setClue(String clu)
 	{
-		
+		clue = clu;
 	}
 
 	/**
 	 * Updates the answer to the provided String.
 	 * @param answer The new answer.
 	 */
-	public void setAnswer(String answer)
+	public void setAnswer(String ans)
 	{
-		
+		answer = ans;
 	}
 	
 	/**
@@ -65,7 +68,7 @@ public class Celebrity
 	@Override
 	public String toString()
 	{
-		return null;
+		return "The celebrity is" + answer + " for the clue " + clue + "!";
 	}
 	
 }
