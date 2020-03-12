@@ -1,4 +1,5 @@
 package CelebrityLab;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,15 +12,13 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-
 /**
  * The start screen for the CelebrityGame app.
  * 
  * @author cody.henrichsen
  * @version 2.1 18/09/2018 Refactored away validation to controller.
  */
-public class StartPanel extends JPanel
-{
+public class StartPanel extends JPanel {
 	/**
 	 * Reference to the Game to call methods.
 	 */
@@ -31,8 +30,8 @@ public class StartPanel extends JPanel
 	private SpringLayout panelLayout;
 
 	/**
-	 * Logical container for the RadioButtons to guarantee only one is selected
-	 * at a time.
+	 * Logical container for the RadioButtons to guarantee only one is selected at a
+	 * time.
 	 */
 	private ButtonGroup typeGroup;
 
@@ -45,7 +44,7 @@ public class StartPanel extends JPanel
 	 * RadioButton for the Celebrity type.
 	 */
 	private JRadioButton literatureRadio;
-	
+
 	/**
 	 * Customize the JRadioButton for the class created sub class
 	 */
@@ -71,7 +70,8 @@ public class StartPanel extends JPanel
 	private JTextField clueField;
 
 	/**
-	 * Button used to verify and add a Celebrity to the ArrayList of Celebrity for the game
+	 * Button used to verify and add a Celebrity to the ArrayList of Celebrity for
+	 * the game
 	 */
 	private JButton addCelebrityButton;
 
@@ -93,8 +93,7 @@ public class StartPanel extends JPanel
 	/**
 	 * String to populate the clueLabel if Class Generated Celebrity is picked.
 	 */
-	
-	
+
 	/**
 	 * String used for static text in label.
 	 */
@@ -104,18 +103,17 @@ public class StartPanel extends JPanel
 	 * The current number of celebrities added to the game
 	 */
 	private int celebrityCount;
-	
-
+	private String movieClue;
+	private JRadioButton movieCeleb;
+	private String nameOfCelebrity;
 
 	/**
-	 * Constructs a StartPanel with a reference to the game passed as a
-	 * parameter to be used as a data member.
+	 * Constructs a StartPanel with a reference to the game passed as a parameter to
+	 * be used as a data member.
 	 * 
-	 * @param controller
-	 *            The reference to the game
+	 * @param controller The reference to the game
 	 */
-	public StartPanel(CelebrityGame controller)
-	{
+	public StartPanel(CelebrityGame controller) {
 		super();
 		this.controller = controller;
 		this.panelLayout = new SpringLayout();
@@ -124,8 +122,12 @@ public class StartPanel extends JPanel
 		this.literatureRadio = new JRadioButton("Literature Celebrity");
 		this.celebrityClue = "Enter the clue for the celebrity";
 		this.literatureClue = "Enter the clues for the literature celeb separated by commas";
+		this.movieClue = "Enter the clues for the movie celeb separated by commas";
 		this.clueLabel = new JLabel(celebrityClue);
-		
+
+		movieCeleb = new JRadioButton("Movie");
+		nameOfCelebrity = "Enter the clues for your movie celebrity separated by commas";
+
 		this.answerField = new JTextField("Type celebrity here (4 letters minimum thx Cher)");
 		this.clueField = new JTextField("Enter celebrity clue here (10 letters minimum)");
 		this.addCelebrityButton = new JButton("Add current celebrity");
@@ -142,31 +144,24 @@ public class StartPanel extends JPanel
 	/**
 	 * Validation method for the text to create a Celebrity instance.
 	 * 
-	 * @param answerText
-	 *            The name of the Celebrity. Validation requires at least 4
-	 *            characters.
-	 * @param clueText
-	 *            The text for the clue. Validation depends on the selected
-	 *            Celebrity type, but at least 10 characters are required.
-	 * @return Whether the appropriate text amounts are filled and the correct
-	 *         type of clue is given.
+	 * @param answerText The name of the Celebrity. Validation requires at least 4
+	 *                   characters.
+	 * @param clueText   The text for the clue. Validation depends on the selected
+	 *                   Celebrity type, but at least 10 characters are required.
+	 * @return Whether the appropriate text amounts are filled and the correct type
+	 *         of clue is given.
 	 */
-	private boolean validate(String answerText, String clueText)
-	{
+	private boolean validate(String answerText, String clueText) {
 		boolean validClue = false;
 		boolean validAnswer = false;
 
-		if (literatureRadio.isSelected())
-		{
+		if (literatureRadio.isSelected()) {
 			validClue = controller.validateClue(clueText, "Literature");
-		}
-		else
-		{
+		} else {
 			validClue = controller.validateClue(clueText, "");
 		}
 
-		if (answerText.length() > 4)
-		{
+		if (answerText.length() > 4) {
 			validAnswer = controller.validateCelebrity(answerText);
 		}
 
@@ -177,8 +172,7 @@ public class StartPanel extends JPanel
 	 * Adds all components to the StartPanel and uses the SpringLayout variable,
 	 * panelLayout, as the layout manager.
 	 */
-	private void setupPanel()
-	{
+	private void setupPanel() {
 		this.setLayout(panelLayout);
 		this.add(clueLabel);
 		this.add(celebrityRadio);
@@ -189,7 +183,9 @@ public class StartPanel extends JPanel
 		this.add(celebrityCountLabel);
 		this.add(addCelebrityButton);
 
-		// Adds the RadioButtons to the group so only one can be selected.
+		this.add(movieCeleb);
+		typeGroup.add(movieCeleb);
+
 		celebrityRadio.setSelected(true);
 		startButton.setEnabled(false);
 		typeGroup.add(celebrityRadio);
@@ -199,11 +195,9 @@ public class StartPanel extends JPanel
 
 	/**
 	 * Uses the Springlayout constraint system to place all GUI components on
-	 * screen. All constraints grouped together to keep code clean and
-	 * maintainable.
+	 * screen. All constraints grouped together to keep code clean and maintainable.
 	 */
-	private void setupLayout()
-	{
+	private void setupLayout() {
 		panelLayout.putConstraint(SpringLayout.WEST, clueLabel, 0, SpringLayout.WEST, celebrityRadio);
 		panelLayout.putConstraint(SpringLayout.NORTH, celebrityRadio, 15, SpringLayout.NORTH, this);
 		panelLayout.putConstraint(SpringLayout.WEST, celebrityRadio, 15, SpringLayout.WEST, this);
@@ -215,9 +209,11 @@ public class StartPanel extends JPanel
 		panelLayout.putConstraint(SpringLayout.NORTH, celebrityCountLabel, 0, SpringLayout.NORTH, celebrityRadio);
 		panelLayout.putConstraint(SpringLayout.EAST, celebrityCountLabel, -45, SpringLayout.EAST, this);
 
-		//Put your custom radio button info here
-		
-		panelLayout.putConstraint(SpringLayout.NORTH, literatureRadio, 10, SpringLayout.SOUTH, celebrityRadio);
+		// Put your custom radio button info here
+
+		panelLayout.putConstraint(SpringLayout.NORTH, literatureRadio, 10, SpringLayout.SOUTH, movieCeleb);
+		panelLayout.putConstraint(SpringLayout.WEST, movieCeleb, 0, SpringLayout.WEST, celebrityRadio);
+		panelLayout.putConstraint(SpringLayout.NORTH, movieCeleb, 10, SpringLayout.SOUTH, celebrityRadio);
 		panelLayout.putConstraint(SpringLayout.WEST, literatureRadio, 0, SpringLayout.WEST, celebrityRadio);
 
 		panelLayout.putConstraint(SpringLayout.NORTH, clueLabel, 10, SpringLayout.SOUTH, answerField);
@@ -236,63 +232,53 @@ public class StartPanel extends JPanel
 	/**
 	 * Used to link all Listeners to the associated GUI components.
 	 */
-	private void setupListeners()
-	{
+	private void setupListeners() {
 		/**
-		 * Links the submitButton to the validation and submit code. Provides
-		 * user input if information is not valid.
+		 * Links the submitButton to the validation and submit code. Provides user input
+		 * if information is not valid.
 		 */
-		startButton.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent mouseClick)
-			{
+		startButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent mouseClick) {
 				controller.play();
 			}
 		});
 
-		addCelebrityButton.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent mouseClick)
-			{
+		addCelebrityButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent mouseClick) {
 				answerField.setBackground(Color.WHITE);
 				clueField.setBackground(Color.WHITE);
-				if (validate(answerField.getText(), clueField.getText()))
-				{
+				if (validate(answerField.getText(), clueField.getText())) {
 					addToGame();
-				}
-				else
-				{
+				} else {
 					invalidInput();
 				}
 				celebrityCount = controller.getCelebrityGameSize();
 				celebrityCountLabel.setText(countLabelText + celebrityCount);
 			}
 		});
-
 		/**
-		 * Adds listeners to the radio buttons using the Java 8+ Lambda structure
-		 * for short code.
+		 * Adds listeners to the radio buttons using the Java 8+ Lambda structure for
+		 * short code.
 		 * 
 		 */
 		literatureRadio.addActionListener(select -> clueLabel.setText(literatureClue));
 		celebrityRadio.addActionListener(select -> clueLabel.setText(celebrityClue));
-
+		movieCeleb.addActionListener(select -> clueLabel.setText(movieClue));
 	}
-	
-	private void invalidInput()
-	{
+
+	private void invalidInput() {
 		answerField.setText("Type in the celebrity!!");
 		answerField.setBackground(Color.RED);
 		clueField.setText("Type in the clue");
 		clueField.setBackground(Color.RED);
 	}
-	
-	private void addToGame()
-	{
+
+	private void addToGame() {
 		String type = "Celebrity";
-		if (literatureRadio.isSelected())
-		{
+		if (literatureRadio.isSelected()) {
 			type = "Literature";
+		} else if (movieCeleb.isSelected()) {
+			type = "Movie";
 		}
 		String answer = answerField.getText().trim();
 		String clue = clueField.getText().trim();
