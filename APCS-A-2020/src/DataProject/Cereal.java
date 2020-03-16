@@ -34,6 +34,6 @@ public class Cereal {
 	}
 	//to string
 	public String toString() {
-		return this.name +" has " + this.carbs + " grams of carbs and " + protein +" grams of protein.";
+		return this.name +", it has " + this.carbs + " grams of carbs and " + protein +" grams of protein.";
 	}
 }

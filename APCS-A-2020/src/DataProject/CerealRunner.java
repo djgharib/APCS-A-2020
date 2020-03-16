@@ -24,6 +24,6 @@ public class CerealRunner {
 				best = i;
 			}
 		}
-		System.out.println("The best cereal for low carbs and high protein is: " + best);
+		System.out.println("The best cereal for low carbs and high protein is " + best);
 	}
 }
