@@ -13,7 +13,7 @@ public class NumberShifterRunner
 {
 	public static void main( String args[] ) throws IOException
 	{
-		//add test cases
+		NumberShifter.makeLucky7Array(size)
 	}
 }
 
