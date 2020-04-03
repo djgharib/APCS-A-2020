@@ -1,5 +1,5 @@
 package FinalProject;
 
-public class Neighborhood {
+public class Street {
 
 }
