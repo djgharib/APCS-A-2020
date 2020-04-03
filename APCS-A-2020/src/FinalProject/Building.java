@@ -1,5 +1,9 @@
 package FinalProject;
 
+import java.util.Scanner;
+import static java.lang.System.*;
+import java.lang.Comparable;
+
 public class Building {
 	private String buildingType;
 	private int buildingSize;
@@ -27,21 +31,20 @@ public class Building {
 	public void setCost(int cost) {
 		buildingCost = cost;
 	}
-	
+
 	public int getCost() {
 		return buildingCost;
 	}
-	
+
 	public int getSize() {
 		return buildingSize;
 	}
-	
+
 	public String getType() {
 		return buildingType;
 	}
-	
-	public String toString()
-	{
-	   return "This " + buildingType + " building costs "+buildingCost+" and has a size of "+buildingSize+".";
+
+	public String toString() {
+		return "This " + buildingType + " building costs " + buildingCost + " and has a size of " + buildingSize + ".";
 	}
 }
