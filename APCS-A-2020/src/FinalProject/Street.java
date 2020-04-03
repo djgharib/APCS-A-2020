@@ -1,5 +1,7 @@
 package FinalProject;
 
-public class Street {
+import java.util.ArrayList;
 
+public class Street {
+	ArrayList<Building> list = new ArrayList<Building>();
 }

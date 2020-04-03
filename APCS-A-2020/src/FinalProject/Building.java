@@ -1,14 +1,14 @@
 package FinalProject;
 
-public class Buidling{
+public class Building {
 	private String buildingType;
 	private int buildingSize;
 	private int buildingCost;
 
 	public void Building() {
 		setType("");
-		setSize(0);
-		setCost(0);
+		setSize(1);
+		setCost(1);
 	}
 
 	public void Building(String type, int size) {
@@ -23,7 +23,25 @@ public class Buidling{
 	public void setSize(int size) {
 		buildingSize = size;
 	}
+
 	public void setCost(int cost) {
 		buildingCost = cost;
+	}
+	
+	public int getCost() {
+		return buildingCost;
+	}
+	
+	public int getSize() {
+		return buildingSize;
+	}
+	
+	public String getType() {
+		return buildingType;
+	}
+	
+	public String toString()
+	{
+	   return "This " + buildingType + " building costs "+buildingCost+" and has a size of "+buildingSize+".";
 	}
 }
