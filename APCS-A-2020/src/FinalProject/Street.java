@@ -14,7 +14,7 @@ public class Street {
 	static private int mostExpensiveBuilding;
 	static ArrayList<Building> streetContents = new ArrayList<Building>();
 	
-	public Street() {
+	public Street() throws IOException {
 		Scanner file = new Scanner(new File("C:\\Users\\Daniel\\Desktop\\Eclipse Workspace\\APCS-A-2020\\APCS-A-2020\\src\\FinalProject\\Neighborhood.dat"));
 		streetName = file.nextLine();
 		String buildingInfo = "";
