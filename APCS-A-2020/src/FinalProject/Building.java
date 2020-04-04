@@ -9,15 +9,16 @@ public class Building {
 	private int buildingSize;
 	private int buildingCost;
 
-	public void Building() {
+	public Building() {
 		setType("");
 		setSize(1);
 		setCost(1);
 	}
 
-	public void Building(String type, int size) {
+	public Building(String type, int size, int cost) {
 		setType(type);
 		setSize(size);
+		setCost(cost);
 	}
 
 	public void setType(String type) {
@@ -45,6 +46,6 @@ public class Building {
 	}
 
 	public String toString() {
-		return "This " + buildingType + " building costs " + buildingCost + " and has a size of " + buildingSize + ".";
+		return buildingType + " " + buildingCost + " " + buildingSize;
 	}
 }

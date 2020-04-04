@@ -1,3 +1,21 @@
-Apex Avenue:100,125,75,200:Commercial,Commercial,Residential,Industrial:100000,125000,75000,200000:
-Vista Drive:80,225,100,210,140:Residential,Industrial,Commercial,Industrial,Commercial:80000,225000,100000,210000,140000:
-Carolina Court:50,60,45,70,115,55:Residential,Residential,Residential,Residential,Commercial,Residential:50000,60000,45000,70000,115000,55000:
+Apex Avenue
+Commercial; 100, 100000;
+Commercial; 125, 125000;
+Residential; 75, 75000;
+Industrial; 200, 200000;
+||
+Vista Drive
+Residential; 80, 80000;
+Industrial; 225, 225000;
+Commercial; 100, 100000;
+Industrial; 210, 210000;
+Commercial; 140, 140000;
+||
+Carolina Court
+Residential; 50, 50000;
+Residential; 60, 60000;
+Residential; 45, 45000;
+Residential; 70, 70000;
+Commercial; 115, 115000;
+Residential; 55, 55000;
+||
