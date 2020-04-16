@@ -12,9 +12,13 @@ public class Street {
 	static private String streetName;
 	static private int cheapestBuilding;
 	static private int mostExpensiveBuilding;
-	static ArrayList<Building> streetContents = new ArrayList<Building>();
-	
-	public Street() throws IOException {
+	ArrayList<Building> streetContents = new ArrayList<Building>();
+	public static void main(String[] args) {
+
+	}
+
+	public Street(int number) throws IOException {
+		streetContents.clear();
 		Scanner file = new Scanner(new File("C:\\Users\\Daniel\\Desktop\\Eclipse Workspace\\APCS-A-2020\\APCS-A-2020\\src\\FinalProject\\Neighborhood.dat"));
 		streetName = file.nextLine();
 		String buildingInfo = "";
@@ -24,7 +28,15 @@ public class Street {
 		int typeEnd = 0;
 		int sizeEnd = 0;
 		int costEnd = 0;
+		int x = 0;
 		buildingInfo = file.nextLine();
+		String test = "";
+		while (x<number) {
+			test = file.nextLine();
+			if(test.equals("||")) {
+				x++;
+			}
+		}
 		while (!buildingInfo.equals("||")) {
 			for (int i = 0; i < buildingInfo.length(); i++) {
 				if (buildingInfo.charAt(i) == ';') {
@@ -33,7 +45,6 @@ public class Street {
 					break;
 				}
 			}
-
 			for (int i = typeEnd; i < buildingInfo.length(); i++) {
 				if (buildingInfo.charAt(i) == ',') {
 					sizeEnd = i;
@@ -50,34 +61,40 @@ public class Street {
 			}
 			int intCost = Integer.parseInt(buildingCost);
 			int intSize = Integer.parseInt(buildingSize);
+			
 			streetContents.add(new Building(buildingType, intSize, intCost));
 			buildingInfo = file.nextLine();
 		}
-		System.out.println(streetContents);
+		System.out.println(streetName + streetContents);
 	}
 
 	public String getName() {
 		return streetName;
 	}
-	
-	public int getCheap() {
+
+	/*public int getCheap() {
 		cheapestBuilding = streetContents.get(0).getCost();
-		for(int i = 1; i<streetContents.size(); i++) {
-			if(streetContents.get(i).getCost()<cheapestBuilding) {
+		for (int i = 1; i < streetContents.size(); i++) {
+			if (streetContents.get(i).getCost() < cheapestBuilding) {
 				cheapestBuilding = streetContents.get(i).getCost();
 			}
 		}
 		System.out.println(cheapestBuilding);
 		return cheapestBuilding;
 	}
+
 	public int getExpensive() {
 		mostExpensiveBuilding = streetContents.get(0).getCost();
-		for(int i = 1; i<streetContents.size(); i++) {
-			if(streetContents.get(i).getCost()>mostExpensiveBuilding) {
+		for (int i = 1; i < streetContents.size(); i++) {
+			if (streetContents.get(i).getCost() > mostExpensiveBuilding) {
 				mostExpensiveBuilding = streetContents.get(i).getCost();
 			}
 		}
 		System.out.println(mostExpensiveBuilding);
 		return mostExpensiveBuilding;
-	}
+	}*/
+	
+	//public String toString() {
+		//return Arrays.toString;
+	//}
 }
