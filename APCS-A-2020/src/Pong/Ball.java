@@ -46,7 +46,6 @@ public class Ball extends Block {
 
 	public void moveAndDraw(Graphics window) {
 		// draw a white ball at old ball location
-
 		setX(getX() + xSpeed);
 		setY(getY() + ySpeed);
 
