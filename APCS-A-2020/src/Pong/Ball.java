@@ -19,7 +19,11 @@ public class Ball extends Block
 	}
 
 	//add the other Ball constructors
-	
+	public Ball(int x, int y) {
+		super(x,y);
+		xSpeed = 3;
+		ySpeed = 1;
+	}
 	
 	
 	
