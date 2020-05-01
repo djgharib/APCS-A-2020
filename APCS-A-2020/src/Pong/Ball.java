@@ -8,8 +8,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Ball extends Block {
-	private int xSpeed;
-	private int ySpeed;
+	private int xSpeed = 0;
+	private int ySpeed = 0;
 
 	public Ball() {
 		super(200, 200);
@@ -46,6 +46,8 @@ public class Ball extends Block {
 
 	public void moveAndDraw(Graphics window) {
 		// draw a white ball at old ball location
+		draw(window, Color.WHITE);
+		
 		setX(getX() + xSpeed);
 		setY(getY() + ySpeed);
 
