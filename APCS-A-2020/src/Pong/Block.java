@@ -17,15 +17,46 @@ public class Block implements Locatable
 
 	public Block()
 	{
-
-
+		xPos = 100;
+		yPos = 150;
+		width = 10;
+		height = 10;
+		color = Color.blue;
 	}
 
 	//add other Block constructors - x , y , width, height, color
-	
-	
-	
-	
+	public Block(int x, int y, Color col)
+	{
+		xPos = x;
+		yPos = y;
+		width = 10;
+		height = 10;
+		color = col;
+	}
+	public Block(int x, int y)
+	{
+		xPos = x;
+		yPos = y;
+		width = 10;
+		height = 10;
+		color = Color.blue;
+	}
+	public Block(int x, int y, int wid, int hei)
+	{
+		xPos = x;
+		yPos = y;
+		width = wid;
+		height = hei;
+		color = Color.blue;
+	}
+	public Block(int x, int y, int wid, int hei, Color col)
+	{
+		xPos = x;
+		yPos = y;
+		width = wid;
+		height = hei;
+		color = col;
+	}
 	
 	
 	
@@ -70,4 +101,7 @@ public class Block implements Locatable
     
 
    //add a toString() method  - x , y , width, height, color
+	public String toString() {
+		return xPos + " " + yPos + " " + width + " " + height + " " + color;
+	}
 }
