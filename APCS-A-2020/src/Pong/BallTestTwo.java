@@ -6,6 +6,9 @@ package Pong;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+
+import static java.lang.System.out;
+
 import java.awt.Canvas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,7 +23,10 @@ class BallTestTwo extends Canvas implements Runnable
 		setVisible(true);
 
 		//instantiate a new Ball
-
+		ball = new Ball(50,50,3,3);
+		ball = new Ball(100,350,10,10,Color.RED);
+		ball = new Ball(200,90,10,10,Color.BLUE);
+		ball = new Ball(300,10,10,10,Color.GREEN);
 
 		//test the Ball thoroughly
 		

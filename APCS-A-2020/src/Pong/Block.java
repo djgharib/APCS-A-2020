@@ -126,4 +126,22 @@ public class Block implements Locatable {
 	public String toString() {
 		return xPos + " " + yPos + " " + width + " " + height + " " + color;
 	}
+
+	@Override
+	public void setPos(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setX(int x) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setY(int y) {
+		// TODO Auto-generated method stub
+		
+	}
 }

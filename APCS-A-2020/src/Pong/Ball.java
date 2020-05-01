@@ -8,8 +8,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class Ball extends Block {
-	private int xSpeed = 0;
-	private int ySpeed = 0;
+	private int xSpeed = 3;
+	private int ySpeed = 1;
 
 	public Ball() {
 		super(200, 200);
