@@ -21,7 +21,7 @@ public class Block implements Locatable
 		yPos = 150;
 		width = 10;
 		height = 10;
-		color = Color.blue;
+		color = Color.black;
 	}
 
 	//add other Block constructors - x , y , width, height, color
@@ -39,7 +39,7 @@ public class Block implements Locatable
 		yPos = y;
 		width = 10;
 		height = 10;
-		color = Color.blue;
+		color = Color.black;
 	}
 	public Block(int x, int y, int wid, int hei)
 	{
@@ -47,7 +47,7 @@ public class Block implements Locatable
 		yPos = y;
 		width = wid;
 		height = hei;
-		color = Color.blue;
+		color = Color.black;
 	}
 	public Block(int x, int y, int wid, int hei, Color col)
 	{

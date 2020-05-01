@@ -24,7 +24,21 @@ public class Ball extends Block
 		xSpeed = 3;
 		ySpeed = 1;
 	}
-	
+	public Ball(int x, int y, int wid, int hei) {
+		super(x,y, wid, hei);
+		xSpeed = 3;
+		ySpeed = 1;
+	}
+	public Ball(int x, int y, int wid, int hei, Color col) {
+		super(x,y, wid, hei, col);
+		xSpeed = 3;
+		ySpeed = 1;
+	}
+	public Ball(int x, int y, int wid, int hei, Color col, int xVel, int yVel) {
+		super(x,y, wid, hei, col);
+		xSpeed = xVel;
+		ySpeed = yVel;
+	}
 	
 	
 	
@@ -45,7 +59,7 @@ public class Ball extends Block
 
 
       setX(getX()+xSpeed);
-		//setY
+      setY(getY()+ySpeed);
 
 		//draw the ball at its new location
    }
@@ -62,4 +76,7 @@ public class Ball extends Block
    //add the get methods
 
    //add a toString() method
+	public String toString() {
+		return super.toString() + " " + xSpeed + " " + ySpeed;
+	}
 }
