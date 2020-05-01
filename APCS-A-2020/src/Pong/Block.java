@@ -78,27 +78,67 @@ public class Block implements Locatable
    public void draw(Graphics window)
    {
    	//uncomment after you write the set and get methods
-      //window.setColor(color);
-      //window.fillRect(getX(), getY(), getWidth(), getHeight());
+      window.setColor(color);
+      window.fillRect(getX(), getY(), getWidth(), getHeight());
    }
 
    public void draw(Graphics window, Color col)
    {
-
-
+	   window.setColor(col);
+	      window.fillRect(getX(), getY(), getWidth(), getHeight());
    }
    
 	public boolean equals(Object obj)
 	{
+		Block temp = (Block) obj;
 
-
-
-
-		return false;
+		if( temp.getX() != xPos)
+		{
+			return false;
+		}
+		
+		else if(temp.getY() != yPos)
+		{
+			return false;
+		}
+		
+		else if(temp.getWidth() != width)
+		{
+			return false;
+		}
+		
+		else if(temp.getHeight() != height)
+		{
+			return false;
+		}
+		
+		else if(temp.getColor() != color)
+		{
+			return false;
+		}
+		
+		else
+		{
+			return true;
+		}
 	}   
 
    //add the other get methods
-    
+   public int getX() {
+	   return xPos;
+   }
+   public int getY() {
+	   return yPos;
+   }
+   public int getWidth() {
+	   return width;
+   }
+   public int getHeight() {
+	   return height;
+   }
+   public Color getColor() {
+	   return color;
+   }
 
    //add a toString() method  - x , y , width, height, color
 	public String toString() {
