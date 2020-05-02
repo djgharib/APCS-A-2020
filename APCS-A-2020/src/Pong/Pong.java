@@ -23,8 +23,6 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 	private BufferedImage back;
 	private int rightScore;
 	private int leftScore;
-	private Wall topWall;
-	private Wall bottomWall;
 
 	public Pong() {
 		// set up all variables related to the game
@@ -67,7 +65,6 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 		rightPaddle.draw(graphToBack);
 
 		// see if ball hits left wall or right wall
-		
 
 		// see if the ball hits the top or bottom wall
 		
