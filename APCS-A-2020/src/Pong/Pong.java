@@ -21,12 +21,15 @@ public class Pong extends Canvas implements KeyListener, Runnable
 	private Paddle rightPaddle;
 	private boolean[] keys;
 	private BufferedImage back;
+	private int rightScore;
+	private int leftScore;
 
 
 	public Pong()
 	{
 		//set up all variables related to the game
-
+		rightScore = 0;
+		leftScore = 0;
 
 
 
