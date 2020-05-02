@@ -2,28 +2,24 @@ package Pong;
 //(c) A+ Computer Science
 //www.apluscompsci.com
 //Name -
- 
+
 import javax.swing.JFrame;
 import java.awt.Component;
 
-public class Tester extends JFrame
+public class TheGame extends JFrame
 {
 	private static final int WIDTH = 800;
 	private static final int HEIGHT = 600;
 
-	public Tester()
+	public TheGame()
 	{
-		super("PONG TESTER");
+		super("PONG");
 		setSize(WIDTH,HEIGHT);
 
-			getContentPane().add(new BlockTestTwo());
+		Pong game = new Pong();
 
-		//uncomment when you are ready to test the Ball
-		getContentPane().add(new BallTestTwo());
-
-		//PaddleTestTwo padTest = new PaddleTestTwo();
-		//((Component)padTest).setFocusable(true);
-		//getContentPane().add(padTest);
+		((Component)game).setFocusable(true);
+		getContentPane().add(game);
 
 		setVisible(true);
 
@@ -32,6 +28,6 @@ public class Tester extends JFrame
 
 	public static void main( String args[] )
 	{
-		Tester run = new Tester();
+		TheGame run = new TheGame();
 	}
 }

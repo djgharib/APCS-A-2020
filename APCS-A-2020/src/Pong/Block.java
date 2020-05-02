@@ -127,21 +127,19 @@ public class Block implements Locatable {
 		return xPos + " " + yPos + " " + width + " " + height + " " + color;
 	}
 
-	@Override
 	public void setPos(int x, int y) {
-		// TODO Auto-generated method stub
+		xPos = x;
+		yPos = y;
 		
 	}
 
-	@Override
 	public void setX(int x) {
-		// TODO Auto-generated method stub
+		xPos = x;
 		
 	}
 
-	@Override
 	public void setY(int y) {
-		// TODO Auto-generated method stub
+		yPos = y;
 		
 	}
 }
