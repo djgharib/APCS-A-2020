@@ -142,4 +142,12 @@ public class Block implements Locatable {
 		yPos = y;
 		
 	}
+	
+	public void setWidth(int wid) {
+		width = wid;
+	}
+	
+	public void setHeight(int hei) {
+		height = hei;
+	}
 }

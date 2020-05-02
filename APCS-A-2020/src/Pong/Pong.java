@@ -1,5 +1,6 @@
 package Pong;
 //(c) A+ Computer Science
+
 //www.apluscompsci.com
 //Name -
 
@@ -14,8 +15,7 @@ import static java.lang.Character.*;
 import java.awt.image.BufferedImage;
 import java.awt.event.ActionListener;
 
-public class Pong extends Canvas implements KeyListener, Runnable
-{
+public class Pong extends Canvas implements KeyListener, Runnable {
 	private Ball ball;
 	private Paddle leftPaddle;
 	private Paddle rightPaddle;
@@ -23,128 +23,123 @@ public class Pong extends Canvas implements KeyListener, Runnable
 	private BufferedImage back;
 	private int rightScore;
 	private int leftScore;
+	private Wall topWall;
+	private Wall bottomWall;
 
-
-	public Pong()
-	{
-		//set up all variables related to the game
+	public Pong() {
+		// set up all variables related to the game
 		rightScore = 0;
 		leftScore = 0;
 
+		ball = new Ball();
 
-
+		leftPaddle = new Paddle(20, 300, 10, 50);
+		rightPaddle = new Paddle(780, 300, 10, 50);
+		
 		keys = new boolean[4];
 
-    
-    	setBackground(Color.WHITE);
+		setBackground(Color.WHITE);
 		setVisible(true);
-		
+
 		new Thread(this).start();
-		addKeyListener(this);		//starts the key thread to log key strokes
+		addKeyListener(this); // starts the key thread to log key strokes
 	}
-	
-   public void update(Graphics window){
-	   paint(window);
-   }
 
-   public void paint(Graphics window)
-   {
-		//set up the double buffering to make the game animation nice and smooth
-		Graphics2D twoDGraph = (Graphics2D)window;
+	public void update(Graphics window) {
+		paint(window);
+	}
 
-		//take a snap shop of the current screen and same it as an image
-		//that is the exact same width and height as the current screen
-		if(back==null)
-		   back = (BufferedImage)(createImage(getWidth(),getHeight()));
+	public void paint(Graphics window) {
+		// set up the double buffering to make the game animation nice and smooth
+		Graphics2D twoDGraph = (Graphics2D) window;
 
-		//create a graphics reference to the back ground image
-		//we will draw all changes on the background image
+		// take a snap shop of the current screen and same it as an image
+		// that is the exact same width and height as the current screen
+		if (back == null)
+			back = (BufferedImage) (createImage(getWidth(), getHeight()));
+
+		// create a graphics reference to the back ground image
+		// we will draw all changes on the background image
 		Graphics graphToBack = back.createGraphics();
-
 
 		ball.moveAndDraw(graphToBack);
 		leftPaddle.draw(graphToBack);
 		rightPaddle.draw(graphToBack);
 
+		// see if ball hits left wall or right wall
+		
 
-		//see if ball hits left wall or right wall
-		if(!(ball.getX()>=10 && ball.getX()<=780))
+		// see if the ball hits the top or bottom wall
+		
+		// see if the ball hits the left paddle
+		
+		// see if the paddles need to be moved
+		if(keys[0] == true)
 		{
-			ball.setXSpeed(0);
-			ball.setYSpeed(0);
+			//move left paddle up and draw it on the window
+			leftPaddle.moveUpAndDraw(window);
 		}
+		if(keys[1] == true)
+		{
+			//move left paddle down and draw it on the window
+			leftPaddle.moveDownAndDraw(window);
 
-		
-		//see if the ball hits the top or bottom wall 
-
-
-
-
-		//see if the ball hits the left paddle
-		
-		
-		
-		//see if the ball hits the right paddle
-		
-		
-		
-
-
-		//see if the paddles need to be moved
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
+		}
+		if(keys[2] == true)
+		{
+			rightPaddle.moveUpAndDraw(window);
+		}
+		if(keys[3] == true)
+		{
+			rightPaddle.moveDownAndDraw(window);
+		}
 		twoDGraph.drawImage(back, null, 0, 0);
 	}
 
-	public void keyPressed(KeyEvent e)
-	{
-		switch(toUpperCase(e.getKeyChar()))
-		{
-			case 'W' : keys[0]=true; break;
-			case 'Z' : keys[1]=true; break;
-			case 'I' : keys[2]=true; break;
-			case 'M' : keys[3]=true; break;
+	public void keyPressed(KeyEvent e) {
+		switch (toUpperCase(e.getKeyChar())) {
+		case 'W':
+			keys[0] = true;
+			break;
+		case 'S':
+			keys[1] = true;
+			break;
+		case 'I':
+			keys[2] = true;
+			break;
+		case 'J':
+			keys[3] = true;
+			break;
 		}
 	}
 
-	public void keyReleased(KeyEvent e)
-	{
-		switch(toUpperCase(e.getKeyChar()))
-		{
-			case 'W' : keys[0]=false; break;
-			case 'Z' : keys[1]=false; break;
-			case 'I' : keys[2]=false; break;
-			case 'M' : keys[3]=false; break;
+	public void keyReleased(KeyEvent e) {
+		switch (toUpperCase(e.getKeyChar())) {
+		case 'W':
+			keys[0] = false;
+			break;
+		case 'S':
+			keys[1] = false;
+			break;
+		case 'I':
+			keys[2] = false;
+			break;
+		case 'J':
+			keys[3] = false;
+			break;
 		}
 	}
 
-	public void keyTyped(KeyEvent e){}
-	
-   public void run()
-   {
-   	try
-   	{
-   		while(true)
-   		{
-   		   Thread.currentThread().sleep(8);
-            repaint();
-         }
-      }catch(Exception e)
-      {
-      }
-  	}	
+	public void keyTyped(KeyEvent e) {
+	}
+
+	public void run() {
+		try {
+			while (true) {
+				Thread.currentThread().sleep(8);
+				repaint();
+			}
+		} catch (Exception e) {
+		}
+	}
 }
