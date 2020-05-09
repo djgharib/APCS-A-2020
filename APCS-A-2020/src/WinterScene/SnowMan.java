@@ -25,6 +25,7 @@ public class SnowMan extends AbstractShape
 
    public void moveAndDraw(Graphics window)
    {
-      draw(window);   
+	  setYPos(getYPos() + getYSpeed());
+      draw(window);
    }
 }

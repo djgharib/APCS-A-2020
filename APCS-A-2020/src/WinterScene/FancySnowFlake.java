@@ -9,18 +9,20 @@ import java.awt.Polygon;
 
 public class FancySnowFlake extends AbstractShape
 {
-   public FancySnowFlake(int x, int y, int w, int h )
+   public FancySnowFlake(int x, int y, int w, int h, int xspd, int yspd)
    {
 	   
-	   super(x, y, w, h, Color.WHITE, 0, 0);
+	   super(x, y, w, h, Color.WHITE, xspd, yspd);
    }
 
    public void draw(Graphics window)
    {
 	   window.setColor(Color.WHITE);
-	   window.fillOval(getXPos(),getYPos(),getWidth(),getHeight());
-	   window.fillOval(getXPos()+25,getYPos()-3*getHeight()/4,3*getWidth()/4,3*getHeight()/4);
-	   window.fillOval(getXPos()-25,getYPos()+getHeight(),5*getWidth()/4,5*getHeight()/4);
+	   window.drawOval(getXPos()-getWidth()/2,getYPos()-getWidth()/2,getWidth(),getHeight());
+	   int xPoly1[] = {getXPos()-getWidth(), getXPos()+getWidth(), getXPos(), getXPos()};
+	   int yPoly1[] = {getYPos()-getHeight()/4, getYPos()+getHeight()/4, getYPos()-getHeight(), getYPos()+getHeight()};
+	   Polygon poly1 = new Polygon(xPoly1, yPoly1, 4);
+	   window.drawPolygon(poly1);
    }
 
    public void moveAndDraw(Graphics window)

@@ -1,5 +1,6 @@
 package WinterScene;
 //(c) A+ Computer Science
+
 //www.apluscompsci.com
 //Name -
 
@@ -14,54 +15,58 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.ArrayList;
 
-public class WinterScenePanel extends JPanel implements Runnable
-{
+public class WinterScenePanel extends JPanel implements Runnable {
 	private List<AbstractShape> shapes;
 	private AbstractShape sMan;
-	
-	public WinterScenePanel()
-	{
+	private AbstractShape snowflake;
+
+	public WinterScenePanel() {
 		setVisible(true);
-		//refer shapes to a new ArrayList of AbstractShape
-
-		//populate the list with 50 unique snowflakes
-
-		//instantiate a snowman
-		sMan = new SnowMan(1000,450,200,200);
+		// refer shapes to a new ArrayList of AbstractShape
+		shapes = new ArrayList<AbstractShape>();
+		// populate the list with 50 unique snowflakes
+		for (int i = 0; i < 50; i++) {
+			int xpos = (int) ((Math.random() * (1210 - 40) + 40));
+			int ypos = (int) ((Math.random() * (890 - 40) + 40));
+			shapes.add(new FancySnowFlake(xpos, ypos, 20, 20, 0, 5));
+		}
+		// instantiate a snowman
+		sMan = new SnowMan(1000, 450, 200, 200);
 		new Thread(this).start();
 	}
 
-	public void update(Graphics window)
-	{
+	public void update(Graphics window) {
 		paint(window);
 	}
 
-	public void paint(Graphics window)
-	{
+	public void paint(Graphics window) {
 		window.setColor(Color.BLUE);
-		window.fillRect(0,0,getWidth(), getHeight());
+		window.fillRect(0, 0, getWidth(), getHeight());
 		window.setColor(Color.WHITE);
-		window.drawRect(20,20,getWidth()-40,getHeight()-40);
-		window.setFont(new Font("TAHOMA",Font.BOLD,18));
-		window.drawString("MAKE A WINTER SCENE!",40,40);
+		window.drawRect(20, 20, getWidth() - 40, getHeight() - 40);
+		window.setFont(new Font("TAHOMA", Font.BOLD, 18));
+		window.drawString("MAKE A WINTER SCENE!", 40, 40);
 
-		//make the snowman appear
+		// make the snowman appear
 		sMan.draw(window);
-		//make the snowflakes appear and move down the screen
-		//check to see if any of the snowflakes need to be reset to the top of the screen
+		// make the snowflakes appear and move down the screen
+		for (AbstractShape s : shapes) {
+			// check to see if any of the snowflakes need to be reset to the top of the screen
+			if (s.getYPos() > 1210) {
+				s.setYPos(40);
+			} else {
+				s.moveAndDraw(window);
+			}
+		}
 	}
 
-   public void run()
-   {
-   	try
-   	{
-   		while(true)
-   		{
-   		   Thread.currentThread().sleep(35);
-            repaint();
-         }
-      }catch(Exception e)
-      {
-      }
-  	}
+	public void run() {
+		try {
+			while (true) {
+				Thread.currentThread().sleep(35);
+				repaint();
+			}
+		} catch (Exception e) {
+		}
+	}
 }
