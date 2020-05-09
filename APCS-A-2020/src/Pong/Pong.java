@@ -31,8 +31,8 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 
 		ball = new Ball();
 
-		leftPaddle = new Paddle(20, 300, 10, 50);
-		rightPaddle = new Paddle(780, 300, 10, 50);
+		leftPaddle = new Paddle(5, 300, 10, 75);
+		rightPaddle = new Paddle(770, 300, 10, 75);
 		
 		keys = new boolean[4];
 
@@ -53,8 +53,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 
 		// take a snap shop of the current screen and same it as an image
 		// that is the exact same width and height as the current screen
-		if (back == null)
-			back = (BufferedImage) (createImage(getWidth(), getHeight()));
+		back = (BufferedImage) (createImage(getWidth(), getHeight()));
 
 		// create a graphics reference to the back ground image
 		// we will draw all changes on the background image
@@ -65,7 +64,9 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 		rightPaddle.draw(graphToBack);
 
 		// see if ball hits left wall or right wall
-
+		if(ball.getY()>=570 || ball.getY()>=0) {
+			ball.setYSpeed(-ball.getYSpeed());
+		}
 		// see if the ball hits the top or bottom wall
 		
 		// see if the ball hits the left paddle
@@ -104,7 +105,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 		case 'I':
 			keys[2] = true;
 			break;
-		case 'J':
+		case 'K':
 			keys[3] = true;
 			break;
 		}
@@ -121,7 +122,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 		case 'I':
 			keys[2] = false;
 			break;
-		case 'J':
+		case 'K':
 			keys[3] = false;
 			break;
 		}
