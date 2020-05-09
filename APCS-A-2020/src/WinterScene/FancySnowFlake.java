@@ -9,6 +9,12 @@ import java.awt.Polygon;
 
 public class FancySnowFlake extends AbstractShape
 {
+   public FancySnowFlake(int x, int y, int w, int h )
+   {
+	   
+	   super(x, y, w, h, Color.WHITE, 0, 5);
+   }
+   
    public FancySnowFlake(int x, int y, int w, int h, int xspd, int yspd)
    {
 	   
@@ -27,6 +33,7 @@ public class FancySnowFlake extends AbstractShape
 
    public void moveAndDraw(Graphics window)
    {
+	  setYPos(getYPos() + getYSpeed());
       draw(window);   
    }
 }

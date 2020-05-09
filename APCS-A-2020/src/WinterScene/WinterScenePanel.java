@@ -28,7 +28,7 @@ public class WinterScenePanel extends JPanel implements Runnable {
 		for (int i = 0; i < 50; i++) {
 			int xpos = (int) ((Math.random() * (1210 - 40) + 40));
 			int ypos = (int) ((Math.random() * (890 - 40) + 40));
-			shapes.add(new FancySnowFlake(xpos, ypos, 20, 20, 0, 5));
+			shapes.add(new FancySnowFlake(xpos, ypos, 20, 20));
 		}
 		// instantiate a snowman
 		sMan = new SnowMan(1000, 450, 200, 200);
@@ -54,6 +54,7 @@ public class WinterScenePanel extends JPanel implements Runnable {
 			// check to see if any of the snowflakes need to be reset to the top of the screen
 			if (s.getYPos() > 1210) {
 				s.setYPos(40);
+				s.setXPos((int) ((Math.random() * (1210 - 40) + 40)));
 			} else {
 				s.moveAndDraw(window);
 			}
