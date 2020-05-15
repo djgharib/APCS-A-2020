@@ -18,12 +18,8 @@ public class Tree extends AbstractShape{
 		Polygon poly1 = new Polygon(xPoly1, yPoly1, 3);
 		window.setColor(getColor());
 		window.fillPolygon(poly1);
-		/*Polygon p = new Polygon();
-		p.addPoint(-2*getWidth() + getXPos(), getYPos() - getHeight()/100);
-		p.addPoint(getXPos() + 3*getWidth(), getYPos() - getHeight()/100);
-		p.addPoint(getXPos() + getWidth()/2, getYPos() - getHeight());
-		window.setColor(getColor());
-		window.fillPolygon(p);*/
+		window.setColor(Color.YELLOW);
+		window.fillOval(xPoly1[2]-15, yPoly1[2]-15, 30, 30);
 	}
 	public void moveAndDraw(Graphics window){
 		draw(window); 

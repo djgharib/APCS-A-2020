@@ -47,7 +47,7 @@ public class WinterScenePanel extends JPanel implements Runnable {
 		window.setColor(Color.WHITE);
 		window.drawRect(20, 20, getWidth() - 40, getHeight() - 40);
 		window.setFont(new Font("TAHOMA", Font.BOLD, 18));
-		window.drawString("MAKE A WINTER SCENE!", 40, 40);
+		window.drawString("Daniel's Winter Scene", 40, 40);
 
 		// make the snowman appear
 		sMan.draw(window);
@@ -55,7 +55,7 @@ public class WinterScenePanel extends JPanel implements Runnable {
 		// make the snowflakes appear and move down the screen
 		for (AbstractShape s : shapes) {
 			// check to see if any of the snowflakes need to be reset to the top of the screen
-			if (s.getYPos() > 1210) {
+			if (s.getYPos() > 890) {
 				s.setYPos(40);
 				s.setXPos((int) ((Math.random() * (1210 - 40) + 40)));
 			} else {
