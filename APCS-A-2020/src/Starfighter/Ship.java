@@ -30,7 +30,7 @@ public class Ship extends MovingThing
 		}
 		catch(Exception e)
 		{
-			//feel free to do something here
+			System.out.println("ship.jpg not found");
 		}
 	}
 
@@ -45,7 +45,7 @@ public class Ship extends MovingThing
 		}
 		catch(Exception e)
 		{
-			//feel free to do something here
+			System.out.println("ship.jpg not found");
 		}
 	}
 
@@ -60,7 +60,7 @@ public class Ship extends MovingThing
 		}
 		catch(Exception e)
 		{
-			//feel free to do something here
+			System.out.println("ship.jpg not found");
 		}
 	}
 
