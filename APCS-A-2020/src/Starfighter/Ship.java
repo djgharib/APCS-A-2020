@@ -80,20 +80,20 @@ public class Ship extends MovingThing
 		int xPos = this.getX();
 		int yPos = this.getY();
 		if(direction.equals("LEFT")) {
-			xPos+=speed;
-			this.setX(xPos);
-		}
-		else if(direction.equals("RIGHT")) {
 			xPos-=speed;
 			this.setX(xPos);
 		}
-		else if(direction.equals("UP")) {
-			yPos+=speed;
+		else if(direction.equals("RIGHT")) {
+			xPos+=speed;
 			this.setX(xPos);
 		}
-		else if(direction.equals("DOWN")) {
+		else if(direction.equals("UP")) {
 			yPos-=speed;
-			this.setX(xPos);
+			this.setY(yPos);
+		}
+		else if(direction.equals("DOWN")) {
+			yPos+=speed;
+			this.setY(yPos);
 		}
 	}
 
@@ -104,6 +104,6 @@ public class Ship extends MovingThing
 
 	public String toString()
 	{
-		return super.toString() + getSpeed();
+		return super.toString() + "" + getSpeed();
 	}
 }
