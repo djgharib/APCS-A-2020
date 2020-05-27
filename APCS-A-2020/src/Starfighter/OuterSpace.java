@@ -100,19 +100,19 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 
 	public void keyPressed(KeyEvent e)
 	{
-		if (e.getKeyCode() == KeyEvent.VK_LEFT)
+		if (e.getKeyCode() == KeyEvent.VK_A)
 		{
 			keys[0] = true;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+		if (e.getKeyCode() == KeyEvent.VK_D)
 		{
 			keys[1] = true;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_UP)
+		if (e.getKeyCode() == KeyEvent.VK_W)
 		{
 			keys[2] = true;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN)
+		if (e.getKeyCode() == KeyEvent.VK_S)
 		{
 			keys[3] = true;
 		}
@@ -125,19 +125,19 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 
 	public void keyReleased(KeyEvent e)
 	{
-		if (e.getKeyCode() == KeyEvent.VK_LEFT)
+		if (e.getKeyCode() == KeyEvent.VK_A)
 		{
 			keys[0] = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT)
+		if (e.getKeyCode() == KeyEvent.VK_D)
 		{
 			keys[1] = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_UP)
+		if (e.getKeyCode() == KeyEvent.VK_W)
 		{
 			keys[2] = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_DOWN)
+		if (e.getKeyCode() == KeyEvent.VK_S)
 		{
 			keys[3] = false;
 		}

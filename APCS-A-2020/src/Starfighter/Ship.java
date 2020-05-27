@@ -104,6 +104,6 @@ public class Ship extends MovingThing
 
 	public String toString()
 	{
-		return super.toString() + "" + getSpeed();
+		return super.toString() + " " + getSpeed();
 	}
 }
