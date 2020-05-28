@@ -21,6 +21,7 @@ public class Bullets
 
 	public void add(Ammo al)
 	{
+		ammo.add(al);
 	}
 
 	//post - draw each Ammo

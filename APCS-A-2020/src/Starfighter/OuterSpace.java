@@ -20,6 +20,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 	private Ship ship;
 	private Alien alienOne;
 	private Alien alienTwo;
+	private Bullets shots;
 
 	/*
 	 * uncomment once you are ready for this part
@@ -84,7 +85,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 			ship.move("DOWN");
 		}
 		if (keys[4] == true) {
-			ship.shoot(graphToBack);
+			shots.add(new Ammo((ship.getX() + ship.getWidth() / 2) - 5, ship.getY() - 5, 5));
 		}
 		
 		
@@ -111,7 +112,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 			keys[3] = true;
 		}
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-			keys[4] = true;
+			
 		}
 		repaint();
 	}
@@ -130,7 +131,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 			keys[3] = false;
 		}
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-			//keys[4] = false;
+			keys[4] = false;
 		}
 		repaint();
 	}
