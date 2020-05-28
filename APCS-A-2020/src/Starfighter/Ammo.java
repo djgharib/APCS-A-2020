@@ -50,7 +50,7 @@ public class Ammo extends MovingThing
 	}
 	
 	
-	public void move()
+	public void move( String direction)
 	{
 		int yPos = this.getY();
 		yPos-=speed;

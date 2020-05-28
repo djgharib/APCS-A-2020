@@ -86,6 +86,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		if (keys[4] == true) {
 			ship.shoot(graphToBack);
 		}
+		
+		
 
 		// add code to move Ship, Alien, etc.
 
@@ -128,7 +130,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 			keys[3] = false;
 		}
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-			keys[4] = false;
+			//keys[4] = false;
 		}
 		repaint();
 	}
