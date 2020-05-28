@@ -7,11 +7,14 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
+import java.net.URL;
+
 import javax.imageio.ImageIO;
 
 public class Ammo extends MovingThing
 {
 	private int speed;
+	private Image image;
 
 	public Ammo()
 	{
@@ -20,13 +23,22 @@ public class Ammo extends MovingThing
 
 	public Ammo(int x, int y)
 	{
-		super(x,y);
+		this(x,y,10);
 	}
 
 	public Ammo(int x, int y, int s)
 	{
 		super(x,y);
 		speed = s;
+		try
+		{
+			URL url = getClass().getResource("ammo.jpg");
+			image = ImageIO.read(url);
+		}
+		catch(Exception e)
+		{
+			System.out.println("ammo.jpg not found");
+		}
 		
 	}
 
@@ -42,13 +54,30 @@ public class Ammo extends MovingThing
 
 	public void draw( Graphics window )
 	{
-		//add code to draw the ammo
+		window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
 	}
 	
 	
 	public void move( String direction )
 	{
-		//add code to draw the ammo
+		int xPos = this.getX();
+		int yPos = this.getY();
+		if(direction.equals("LEFT")) {
+			xPos-=speed;
+			this.setX(xPos);
+		}
+		if(direction.equals("RIGHT")) {
+			xPos+=speed;
+			this.setX(xPos);
+		}
+		if(direction.equals("UP")) {
+			yPos-=speed;
+			this.setY(yPos);
+		}
+		if(direction.equals("DOWN")) {
+			yPos+=speed;
+			this.setY(yPos);
+		}
 	}
 
 	public String toString()

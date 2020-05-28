@@ -82,15 +82,15 @@ public class Alien extends MovingThing
 			xPos-=speed;
 			this.setX(xPos);
 		}
-		else if(direction.equals("RIGHT")) {
+		if(direction.equals("RIGHT")) {
 			xPos+=speed;
 			this.setX(xPos);
 		}
-		else if(direction.equals("UP")) {
+		if(direction.equals("UP")) {
 			yPos-=speed;
 			this.setY(yPos);
 		}
-		else if(direction.equals("DOWN")) {
+		if(direction.equals("DOWN")) {
 			yPos+=speed;
 			this.setY(yPos);
 		}

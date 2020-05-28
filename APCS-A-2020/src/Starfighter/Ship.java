@@ -83,18 +83,23 @@ public class Ship extends MovingThing
 			xPos-=speed;
 			this.setX(xPos);
 		}
-		else if(direction.equals("RIGHT")) {
+		if(direction.equals("RIGHT")) {
 			xPos+=speed;
 			this.setX(xPos);
 		}
-		else if(direction.equals("UP")) {
+		if(direction.equals("UP")) {
 			yPos-=speed;
 			this.setY(yPos);
 		}
-		else if(direction.equals("DOWN")) {
+		if(direction.equals("DOWN")) {
 			yPos+=speed;
 			this.setY(yPos);
 		}
+	}
+	
+	public void shoot(Graphics window) {
+		Ammo shot = new Ammo (this.getX()-this.getWidth()/2,this.getX()-this.getHeight(), 5);
+		shot.draw(window);
 	}
 
 	public void draw( Graphics window )
