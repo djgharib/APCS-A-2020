@@ -90,7 +90,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		{
 			ship.move("DOWN");
 		}
-		if(keys[3] == true)
+		if(keys[4] == true)
 		{
 			ship.shoot(graphToBack);
 		}

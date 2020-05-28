@@ -82,7 +82,7 @@ public class Ship extends MovingThing
 	}
 	
 	public void shoot(Graphics window) {
-		Ammo shot = new Ammo (this.getX()-this.getWidth()/2,this.getX()-this.getHeight(), 5);
+		Ammo shot = new Ammo (this.getX()+this.getWidth()/2,this.getY(), 5);
 		shot.draw(window);
 	}
 
