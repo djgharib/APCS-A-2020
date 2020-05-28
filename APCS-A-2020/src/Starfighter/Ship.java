@@ -99,7 +99,7 @@ public class Ship extends MovingThing
 
 	public void draw( Graphics window )
 	{
-   	window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
+		window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
 	}
 
 	public String toString()
