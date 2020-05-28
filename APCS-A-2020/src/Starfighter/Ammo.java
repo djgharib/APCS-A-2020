@@ -14,7 +14,6 @@ import javax.imageio.ImageIO;
 public class Ammo extends MovingThing
 {
 	private int speed;
-	private Image image;
 
 	public Ammo()
 	{
@@ -30,15 +29,6 @@ public class Ammo extends MovingThing
 	{
 		super(x,y);
 		speed = s;
-		try
-		{
-			URL url = getClass().getResource("ammo.jpg");
-			image = ImageIO.read(url);
-		}
-		catch(Exception e)
-		{
-			System.out.println("ammo.jpg not found");
-		}
 		
 	}
 
@@ -54,7 +44,8 @@ public class Ammo extends MovingThing
 
 	public void draw( Graphics window )
 	{
-		window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
+		window.setColor(Color.yellow);
+		window.fillRect(getX(), getY(), 10, 10);
 	}
 	
 	
