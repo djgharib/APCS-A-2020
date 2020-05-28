@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Bullets
 {
-	private List<Ammo> ammo;
+	private ArrayList<Ammo> ammo;
 
 	public Bullets()
 	{
@@ -55,7 +55,7 @@ public class Bullets
         }
 	}
 
-	public List<Ammo> getList()
+	public ArrayList<Ammo> getList()
 	{
 		return ammo;
 	}

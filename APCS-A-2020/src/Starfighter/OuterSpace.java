@@ -22,6 +22,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 	private Alien alienTwo;
 	private Bullets shots;
 	private int waitTime;
+	private AlienHorde horde;
 
 	/*
 	 * uncomment once you are ready for this part
@@ -40,11 +41,13 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		// instantiate other instance variables
 		// Ship, Alien
 		shots = new Bullets();
+		horde = new AlienHorde();
 		ship = new Ship(350, 400, 100, 100, 3);
 		alienOne = new Alien(300, 100, 100, 100, 3);
 		alienTwo = new Alien(400, 100, 100, 100, 3);
 		waitTime = 0;
-
+		horde.add(alienOne);
+		horde.add(alienTwo);
 		this.addKeyListener(this);
 		new Thread(this).start();
 
@@ -72,12 +75,11 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		graphToBack.setColor(Color.BLACK);
 		graphToBack.fillRect(0, 0, 800, 600);
 		ship.draw(graphToBack);
-		alienOne.draw(graphToBack);
-		alienTwo.draw(graphToBack);
-		alienOne.isAlive(shots);
 		shots.drawEmAll(graphToBack);
 		shots.moveEmAll();
 		shots.cleanEmUp();
+		horde.drawEmAll(graphToBack);
+		horde.removeDeadOnes(shots.getList());
 
 		if (keys[0] == true) {
 			ship.move("LEFT");
@@ -93,10 +95,10 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		}
 		if (keys[4] == true && waitTime == 0) {
 			shots.add(new Ammo((ship.getX() + ship.getWidth() / 2) - 5, ship.getY() - 5, 5));
-			
+
 		}
 		waitTime++;
-		waitTime = waitTime%100;
+		waitTime = waitTime % 30;
 		// add code to move Ship, Alien, etc.
 
 		// add in collision detection to see if Bullets hit the Aliens and if Bullets
