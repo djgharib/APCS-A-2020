@@ -5,6 +5,7 @@ package Starfighter;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ArrayList;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -96,8 +97,13 @@ public class Alien extends MovingThing
 		}
 	}
    
-   public void isHit(Ammo a) {
-	   
+   public boolean isAlive(ArrayList<Ammo> a) {
+	   for (Ammo ammo : a) {
+		   if(ammo.getX()>getX() && ammo.getX()<getX()+50 && ammo.getY() > getY() && ammo.getY() < getY()-50) {
+	           return true;
+	       }
+       }
+	   return false;
    }
 
 	public void draw( Graphics window )

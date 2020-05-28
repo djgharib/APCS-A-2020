@@ -74,6 +74,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		ship.draw(graphToBack);
 		alienOne.draw(graphToBack);
 		alienTwo.draw(graphToBack);
+		alienOne.isAlive(shots);
 		shots.drawEmAll(graphToBack);
 		shots.moveEmAll();
 		shots.cleanEmUp();
