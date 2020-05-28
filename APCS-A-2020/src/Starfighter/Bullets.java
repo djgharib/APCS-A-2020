@@ -17,6 +17,7 @@ public class Bullets
 
 	public Bullets()
 	{
+		ammo = new ArrayList<Ammo>(0);
 	}
 
 	public void add(Ammo al)
@@ -27,10 +28,20 @@ public class Bullets
 	//post - draw each Ammo
 	public void drawEmAll( Graphics window )
 	{
+		if (ammo.size() > 0) {
+			for (Ammo a : ammo) {
+				a.draw(window);
+			}
+		}
 	}
 
 	public void moveEmAll()
 	{
+		if (ammo.size() > 0) {
+			for (Ammo a : ammo) {
+				a.move("UP");
+			}
+		}
 	}
 
 	public void cleanEmUp()
