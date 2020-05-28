@@ -46,7 +46,13 @@ public class Bullets
 
 	public void cleanEmUp()
 	{
-		
+		if (ammo.size() > 0) {
+            for (Ammo a : ammo) {
+                if (a.getY()<0){
+                    a=null;
+                }
+            }
+        }
 	}
 
 	public List<Ammo> getList()
@@ -56,6 +62,6 @@ public class Bullets
 
 	public String toString()
 	{
-		return "";
+		return "" + ammo.size();
 	}
 }

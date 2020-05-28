@@ -28,7 +28,7 @@ public class Ammo extends MovingThing
 	public Ammo(int x, int y, int s)
 	{
 		super(x,y);
-		speed = s;
+		speed = 1;
 		
 	}
 
@@ -45,7 +45,6 @@ public class Ammo extends MovingThing
 	public void draw( Graphics window )
 	{
 		window.setColor(Color.yellow);
-		this.move("UP");
 		window.fillRect(getX(), getY(), 10, 10);
 	}
 	
@@ -69,6 +68,17 @@ public class Ammo extends MovingThing
 		if(direction.equals("DOWN")) {
 			yPos+=speed;
 			this.setY(yPos);
+		}
+	}
+	
+	public boolean didCollide(Alien al) {
+		if (getX() + 10 >= al.getX() && getX() <= al.getX() + al.getWidth()
+				&& getY() - 10 >= al.getY()
+				&& getY() <= al.getY() + al.getHeight()) {
+
+			return true;
+		} else {
+			return false;
 		}
 	}
 
