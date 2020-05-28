@@ -52,9 +52,24 @@ public class Ammo extends MovingThing
 	
 	public void move( String direction)
 	{
+		int xPos = this.getX();
 		int yPos = this.getY();
-		yPos-=speed;
-		this.setY(yPos);
+		if(direction.equals("LEFT")) {
+			xPos-=speed;
+			this.setX(xPos);
+		}
+		if(direction.equals("RIGHT")) {
+			xPos+=speed;
+			this.setX(xPos);
+		}
+		if(direction.equals("UP")) {
+			yPos-=speed;
+			this.setY(yPos);
+		}
+		if(direction.equals("DOWN")) {
+			yPos+=speed;
+			this.setY(yPos);
+		}
 	}
 
 	public String toString()
