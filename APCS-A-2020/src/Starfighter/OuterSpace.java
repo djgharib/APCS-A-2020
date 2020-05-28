@@ -72,6 +72,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		ship.draw(graphToBack);
 		alienOne.draw(graphToBack);
 		alienTwo.draw(graphToBack);
+		shots.drawEmAll(graphToBack);
+		shots.moveEmAll();
 
 		if (keys[0] == true) {
 			ship.move("LEFT");
@@ -88,8 +90,6 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		if (keys[4] == true) {
 			shots.add(new Ammo((ship.getX() + ship.getWidth() / 2) - 5, ship.getY() - 5, 5));
 		}
-		shots.drawEmAll(graphToBack);
-		shots.moveEmAll();
 		
 
 		// add code to move Ship, Alien, etc.
@@ -114,7 +114,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 			keys[3] = true;
 		}
 		if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-			
+			keys[4] = false;
 		}
 		repaint();
 	}
