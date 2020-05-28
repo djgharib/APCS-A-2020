@@ -38,6 +38,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 
 		// instantiate other instance variables
 		// Ship, Alien
+		shots = new Bullets();
 		ship = new Ship(350, 400, 100, 100, 3);
 		alienOne = new Alien(300, 100, 100, 100, 3);
 		alienTwo = new Alien(400, 100, 100, 100, 3);
@@ -87,7 +88,6 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		if (keys[4] == true) {
 			shots.add(new Ammo((ship.getX() + ship.getWidth() / 2) - 5, ship.getY() - 5, 5));
 		}
-		
 		shots.drawEmAll(graphToBack);
 		shots.moveEmAll();
 		
