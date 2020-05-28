@@ -48,7 +48,7 @@ public class Bullets
 	{
 		if (ammo.size() > 0) {
             for (Ammo a : ammo) {
-                if (a.getY()<0){
+                if (a.getY()==0){
                     a=null;
                 }
             }
@@ -62,6 +62,6 @@ public class Bullets
 
 	public String toString()
 	{
-		return "" + ammo.size();
+		return "";
 	}
 }

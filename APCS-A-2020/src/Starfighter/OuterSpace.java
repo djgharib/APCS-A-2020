@@ -96,7 +96,6 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		}
 		waitTime++;
 		waitTime = waitTime%100;
-		System.out.println(shots);
 		// add code to move Ship, Alien, etc.
 
 		// add in collision detection to see if Bullets hit the Aliens and if Bullets

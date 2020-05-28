@@ -95,6 +95,10 @@ public class Alien extends MovingThing
 			this.setY(yPos);
 		}
 	}
+   
+   public void isHit(Ammo a) {
+	   
+   }
 
 	public void draw( Graphics window )
 	{
