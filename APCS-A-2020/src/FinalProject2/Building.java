@@ -32,11 +32,11 @@ public class Building implements Object {
 		return appearance;
 	}
 	
-	public int getHeight() {
+	public int getSize() {
 		return size;
 	}
 	
-	public String getJob() {
+	public String getOwner() {
 		return owner;
 	}
 }
