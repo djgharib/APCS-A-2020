@@ -23,13 +23,6 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 	private Bullets shots;
 	private int waitTime;
 	private AlienHorde horde;
-
-	/*
-	 * uncomment once you are ready for this part
-	 *
-	 * private AlienHorde horde; private Bullets shots;
-	 */
-
 	private boolean[] keys;
 	private BufferedImage back;
 
