@@ -23,6 +23,7 @@ import javax.swing.JButton;
 import javax.swing.JMenuItem;
 import javax.swing.SwingConstants;
 import javax.swing.JSpinner;
+import javax.swing.ImageIcon;
 
 public class GUIDesign {
 
@@ -66,22 +67,23 @@ public class GUIDesign {
 		frame.getContentPane().add(comboBox);
 
 		JPanel panel = new JPanel();
-		panel.setBounds(64, 88, 256, 324);
+		panel.setBounds(64, 88, 256, 381);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(32, 100, 192, 192);
-		panel.add(panel_2);
+		JLabel show_image = new JLabel("New label");
+		show_image.setIcon(new ImageIcon(GUIDesign.class.getResource("/FinalProject2/img/building1.png")));
+		show_image.setBounds(32, 157, 192, 192);
+		panel.add(show_image);
+		
+		JLabel lblNewLabel = new JLabel("Name:");
+		lblNewLabel.setBounds(32, 11, 46, 14);
+		panel.add(lblNewLabel);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(384, 88, 256, 324);
+		panel_1.setBounds(384, 88, 256, 381);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(32, 100, 192, 192);
-		panel_1.add(panel_3);
 
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setToolTipText("Building");
