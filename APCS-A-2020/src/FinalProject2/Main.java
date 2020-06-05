@@ -3,6 +3,7 @@ package FinalProject2;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.List;
 import java.awt.Canvas;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyListener;
@@ -14,10 +15,11 @@ import java.util.ArrayList;
 
 public class Main {
 	public Building test;
+	private ArrayList<Building> buildingList;
 
 	public Main() {
 		test = new Building("a", ",", 1, 1, "a");
-		
+		buildingList.add(test);
 	}
 
 }
