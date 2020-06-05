@@ -72,7 +72,7 @@ public class GUIDesign {
 		panel.setLayout(null);
 		
 		JLabel show_image = new JLabel("New label");
-		show_image.setIcon(new ImageIcon(GUIDesign.class.getResource("/FinalProject2/img/building1.png")));
+		show_image.setIcon(new ImageIcon(GUIDesign.class.getResource("/FinalProject2/img/building1" + ".png")));
 		show_image.setBounds(32, 157, 192, 192);
 		panel.add(show_image);
 		
