@@ -24,6 +24,18 @@ import javax.swing.JMenuItem;
 import javax.swing.SwingConstants;
 import javax.swing.JSpinner;
 import javax.swing.ImageIcon;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.List;
+import java.awt.Canvas;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
+import static java.lang.Character.*;
+import java.awt.image.BufferedImage;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class GUIDesign {
 
@@ -55,7 +67,7 @@ public class GUIDesign {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize(ArrayList buildList) {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 720, 540);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
