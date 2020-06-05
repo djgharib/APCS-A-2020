@@ -17,6 +17,8 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.RowSpec;
 import com.jgoodies.forms.layout.FormSpecs;
 import javax.swing.JTextPane;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
 
 public class GUIDesign {
 
@@ -53,24 +55,30 @@ public class GUIDesign {
 		frame.setBounds(100, 100, 720, 540);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JComboBox comboBox = new JComboBox();
 		comboBox.setToolTipText("Person");
-		comboBox.setBounds(135, 46, 100, 20);
+		comboBox.setBounds(142, 57, 100, 20);
 		frame.getContentPane().add(comboBox);
-		
+
 		JPanel panel = new JPanel();
-		panel.setBounds(54, 77, 256, 324);
+		panel.setBounds(64, 88, 256, 324);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
-		
+
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(400, 77, 256, 324);
+		panel_1.setBounds(384, 88, 256, 324);
 		frame.getContentPane().add(panel_1);
-		
+
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setToolTipText("Building");
-		comboBox_1.setBounds(481, 46, 100, 20);
+		comboBox_1.setBounds(462, 57, 100, 20);
 		frame.getContentPane().add(comboBox_1);
+
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+
+		JMenu mnNewMenu = new JMenu("File");
+		menuBar.add(mnNewMenu);
 	}
 }
