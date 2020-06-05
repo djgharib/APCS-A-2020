@@ -43,9 +43,6 @@ import javax.swing.border.LineBorder;
 public class GUI {
 
 	private JFrame frame;
-	private static Building test;
-	private static Building test2;
-	private static ArrayList<Building> buildingList;
 
 	/**
 	 * Launch the application.
@@ -53,9 +50,6 @@ public class GUI {
 	public static void main(String[] args) {
 		GUI window = new GUI();
 		window.frame.setVisible(true);
-		test = new Building("Research Facility", "07/24/2005", 1, 1157500, "CERN");
-		test2 = new Building("Headquarters", "04/18/2010", 1, 976500, "Tech Company");
-		buildingList.add(test);
 	}
 
 	/**
@@ -86,7 +80,7 @@ public class GUI {
 		panel.setLayout(null);
 
 		JLabel show_image = new JLabel("");
-		show_image.setIcon(new ImageIcon(GUI.class.getResource("/FinalProject2/img/building1.png")));
+		show_image.setIcon(new ImageIcon(GUI.class.getResource("/FinalProject2/img/building3" + ".png")));
 		show_image.setBounds(32, 157, 192, 192);
 		panel.add(show_image);
 
@@ -113,7 +107,7 @@ public class GUI {
 		panel_1.setLayout(null);
 
 		JLabel show_image_1 = new JLabel("New label");
-		show_image_1.setIcon(new ImageIcon(GUI.class.getResource("/FinalProject2/img/person1.png")));
+		show_image_1.setIcon(new ImageIcon(GUI.class.getResource("/FinalProject2/img/person2.png")));
 		show_image_1.setBounds(32, 157, 192, 192);
 		panel_1.add(show_image_1);
 
