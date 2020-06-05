@@ -19,6 +19,10 @@ import com.jgoodies.forms.layout.FormSpecs;
 import javax.swing.JTextPane;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
+import javax.swing.JButton;
+import javax.swing.JMenuItem;
+import javax.swing.SwingConstants;
+import javax.swing.JSpinner;
 
 public class GUIDesign {
 
@@ -65,10 +69,19 @@ public class GUIDesign {
 		panel.setBounds(64, 88, 256, 324);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(32, 100, 192, 192);
+		panel.add(panel_2);
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(384, 88, 256, 324);
 		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBounds(32, 100, 192, 192);
+		panel_1.add(panel_3);
 
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setToolTipText("Building");
@@ -80,5 +93,11 @@ public class GUIDesign {
 
 		JMenu mnNewMenu = new JMenu("File");
 		menuBar.add(mnNewMenu);
+
+		JMenuItem mntmNewMenuItem = new JMenuItem("Save");
+		mnNewMenu.add(mntmNewMenuItem);
+
+		JMenuItem mntmLoad = new JMenuItem("Load");
+		mnNewMenu.add(mntmLoad);
 	}
 }

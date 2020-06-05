@@ -17,7 +17,7 @@ public class Main {
 
 	public Main() {
 		test = new Building("a", ",", 1, 1, "a");
-		System.out.println(test.getSize());
+		
 	}
 
 }
