@@ -67,7 +67,7 @@ public class GUIDesign {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize(ArrayList buildList) {
+	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 720, 540);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
