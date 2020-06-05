@@ -36,31 +36,32 @@ import static java.lang.Character.*;
 import java.awt.image.BufferedImage;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.LineBorder;
 
-public class GUIDesign {
+public class GUI {
 
 	private JFrame frame;
+	private static Building test;
+	private static Building test2;
+	private static ArrayList<Building> buildingList;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUIDesign window = new GUIDesign();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		GUI window = new GUI();
+		window.frame.setVisible(true);
+		test = new Building("Research Facility", "07/24/2005", 1, 1157500, "CERN");
+		test2 = new Building("Headquarters", "04/18/2010", 1, 976500, "Tech Company");
+		buildingList.add(test);
 	}
 
 	/**
 	 * Create the application.
 	 */
-	public GUIDesign() {
+	public GUI() {
 		initialize();
 	}
 
@@ -79,55 +80,57 @@ public class GUIDesign {
 		frame.getContentPane().add(comboBox);
 
 		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.setBounds(64, 88, 256, 381);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
-		
-		JLabel show_image = new JLabel("New label");
-		show_image.setIcon(new ImageIcon(GUIDesign.class.getResource("/FinalProject2/img/building1.png")));
+
+		JLabel show_image = new JLabel("");
+		show_image.setIcon(new ImageIcon(GUI.class.getResource("/FinalProject2/img/building1.png")));
 		show_image.setBounds(32, 157, 192, 192);
 		panel.add(show_image);
-		
+
 		JLabel lblNewLabel = new JLabel("Name:");
-		lblNewLabel.setBounds(32, 11, 36, 14);
+		lblNewLabel.setBounds(32, 11, 50, 14);
 		panel.add(lblNewLabel);
-		
+
 		JLabel lblOwner = new JLabel("Owner:");
-		lblOwner.setBounds(32, 32, 36, 14);
+		lblOwner.setBounds(32, 32, 50, 14);
 		panel.add(lblOwner);
-		
+
 		JLabel lblSize = new JLabel("Size:");
-		lblSize.setBounds(32, 53, 23, 14);
+		lblSize.setBounds(32, 53, 50, 14);
 		panel.add(lblSize);
-		
+
 		JLabel lblConstructionDate = new JLabel("Construction Date:");
-		lblConstructionDate.setBounds(32, 76, 91, 14);
+		lblConstructionDate.setBounds(32, 76, 125, 14);
 		panel.add(lblConstructionDate);
 
 		JPanel panel_1 = new JPanel();
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel_1.setBounds(384, 88, 256, 381);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
-		
+
 		JLabel show_image_1 = new JLabel("New label");
-		show_image_1.setIcon(new ImageIcon(GUIDesign.class.getResource("/FinalProject2/img/person1.png")));
+		show_image_1.setIcon(new ImageIcon(GUI.class.getResource("/FinalProject2/img/person1.png")));
 		show_image_1.setBounds(32, 157, 192, 192);
 		panel_1.add(show_image_1);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("Name:");
-		lblNewLabel_1.setBounds(32, 11, 36, 14);
+		lblNewLabel_1.setBounds(32, 11, 50, 14);
 		panel_1.add(lblNewLabel_1);
-		
+
 		JLabel lblNewLabel_1_1 = new JLabel("Age:");
-		lblNewLabel_1_1.setBounds(32, 32, 23, 14);
+		lblNewLabel_1_1.setBounds(32, 32, 50, 14);
 		panel_1.add(lblNewLabel_1_1);
-		
+
 		JLabel lblNewLabel_1_2 = new JLabel("Height:");
-		lblNewLabel_1_2.setBounds(32, 53, 36, 14);
+		lblNewLabel_1_2.setBounds(32, 53, 50, 14);
 		panel_1.add(lblNewLabel_1_2);
-		
+
 		JLabel lblNewLabel_1_3 = new JLabel("Date of Birth:");
-		lblNewLabel_1_3.setBounds(32, 76, 65, 14);
+		lblNewLabel_1_3.setBounds(32, 76, 100, 14);
 		panel_1.add(lblNewLabel_1_3);
 
 		JComboBox comboBox_1 = new JComboBox();

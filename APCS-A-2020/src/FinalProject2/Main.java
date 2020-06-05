@@ -13,13 +13,26 @@ import java.awt.image.BufferedImage;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
+
 public class Main {
 	public Building test;
 	private ArrayList<Building> buildingList;
-
-	public Main() {
-		test = new Building("a", ",", 1, 1, "a");
-		buildingList.add(test);
+	private JFrame frame;
+	
+	
+	public static void main(String[] args) {
 	}
 
+	public Main() {
+		
+	}
 }
