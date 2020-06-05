@@ -79,10 +79,10 @@ public class GUI {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 
-		JLabel show_image = new JLabel("");
-		show_image.setIcon(new ImageIcon(GUI.class.getResource("/FinalProject2/img/building3" + ".png")));
-		show_image.setBounds(32, 157, 192, 192);
-		panel.add(show_image);
+		JLabel bld_image = new JLabel("");
+		bld_image.setIcon(new ImageIcon(GUI.class.getResource("/FinalProject2/img/building3" + ".png")));
+		bld_image.setBounds(32, 157, 192, 192);
+		panel.add(bld_image);
 
 		JLabel lblNewLabel = new JLabel("Name:");
 		lblNewLabel.setBounds(32, 11, 50, 14);
