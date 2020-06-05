@@ -4,17 +4,19 @@ import javax.swing.*;
 
 public class GUI {
 	public static void main(String args[]) {
-		JFrame frame = new JFrame("ObjectDatabase");
 		JMenu menu;
-		JMenuItem save, load;
-		JMenuBar menu1 = new JMenuBar();
+		JMenuItem a1, a2;
+		JFrame a = new JFrame("Example");
 		menu = new JMenu("File");
-		save = new JMenuItem("Save");
-		load = new JMenuItem("Load");
-		menu.add(save);
-		menu.add(load);
-		frame.setJMenuBar(menu1);
-		frame.setSize(720, 540);
-		frame.setVisible(true);
+		JMenuBar m1 = new JMenuBar();
+		a1 = new JMenuItem("Save");
+		a2 = new JMenuItem("Load");
+		menu.add(a1);
+		menu.add(a2);
+		m1.add(menu);
+		a.setJMenuBar(m1);
+		a.setSize(720, 540);
+		a.setLayout(null);
+		a.setVisible(true);
 	}
 }
