@@ -104,6 +104,10 @@ public class GUI {
 		JLabel lblConstructionDate = new JLabel("Construction Date:");
 		lblConstructionDate.setBounds(32, 76, 125, 14);
 		panel.add(lblConstructionDate);
+		
+		JButton btnNewButton = new JButton("Edit");
+		btnNewButton.setBounds(80, 120, 80, 20);
+		panel.add(btnNewButton);
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -167,5 +171,4 @@ public class GUI {
 		    });
 		mnNewMenu.add(mntmLoad);
 	}
-	
 }
