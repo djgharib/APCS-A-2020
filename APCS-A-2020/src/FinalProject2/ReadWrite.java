@@ -41,9 +41,7 @@ public class ReadWrite {
 	public static void write(ArrayList<Object> objectList) throws IOException {
 		PrintWriter printWriter = new PrintWriter("Info.dat");
 	    for(int i = 0; i<objectList.size();i++) {
-	    	if(objectList.get(i).getClass()) {
-	    		
-	    	}
+	    	printWriter.println(objectList.get(i).toString());
 	    }
 	    printWriter.close();
 	}
