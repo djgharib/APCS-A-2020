@@ -39,8 +39,8 @@ public class ReadWrite {
 	
 	public static void write(ArrayList<Object> objectList) throws FileNotFoundException {
 		try (PrintWriter writer = new PrintWriter("Info.dat")) {
+			writer.print("test");
 		    for(int i = 0; i<objectList.size(); i++) {
-		    	writer.print(objectList.get(i).getAppearance());
 		    }
 		}
 	}
