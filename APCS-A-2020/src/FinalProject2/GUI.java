@@ -37,6 +37,7 @@ import java.awt.event.KeyEvent;
 import static java.lang.Character.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -155,7 +156,12 @@ public class GUI {
 		JMenuItem mntmSave = new JMenuItem("Save");
 		mntmSave.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent ev) {
-		    	  ReadWrite.write(objectList);
+		    	  try {
+					ReadWrite.write(objectList);
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		      }
 		    });
 		mnNewMenu.add(mntmSave);
