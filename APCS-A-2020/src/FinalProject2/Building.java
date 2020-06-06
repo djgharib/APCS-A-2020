@@ -59,4 +59,8 @@ public class Building implements Object {
 	public void setOwner(String own) {
 		owner = own;
 	}
+	
+	public String toString() {
+		return "P," + name + ","+date+","+appearance+","+size+","+owner+",";
+	}
 }
