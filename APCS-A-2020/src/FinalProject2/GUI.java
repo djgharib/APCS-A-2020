@@ -162,7 +162,7 @@ public class GUI {
 		    	  	personList = new ArrayList<Person>();
 		    	  	personList.add(test);
 					try {
-						ReadWrite.write(personList);
+						ReadWrite.personWrite(personList);
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -178,7 +178,7 @@ public class GUI {
 		    	  fc.showOpenDialog(fc);
 		    	  filepath = fc.getSelectedFile();
 		    	  try {
-		    		  personList = ReadWrite.read(filepath);
+		    		  personList = ReadWrite.personRead(filepath);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
