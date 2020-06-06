@@ -28,7 +28,7 @@ public class ReadWrite {
 				System.out.println(thisLine.substring(1,3));
 			}
 			else if(thisLine.charAt(0) == 'P') {
-				
+				System.out.println(thisLine.substring(1,3));
 			}
 		}
 		
