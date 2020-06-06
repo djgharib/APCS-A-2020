@@ -79,21 +79,20 @@ public class ReadWrite {
 						break;
 					}
 				}
-				
+				Objects.add(new Person(name,date,appearance,height,job));
 			}
 			else if(thisLine.charAt(0) == 'B') {
 				
 			}
-			Objects.add(new Person(name,date,appearance,height,job));
 			thisLine = file.nextLine();
 		} while(file.hasNextLine());
 		file.close();
+		System.out.println(Objects);
 		return Objects;
 	}
 	
 	public static ArrayList<Building> buildingRead(File filepath) throws IOException {
 		ArrayList<Building> Objects = new ArrayList<Building>();
-		Building test = new Building("","",0,0,"");
 		Scanner file = new Scanner(filepath);
 		thisLine = file.nextLine();
 		String name = "";

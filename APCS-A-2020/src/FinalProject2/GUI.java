@@ -44,6 +44,7 @@ import java.util.ArrayList;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.JTextField;
 
 public class GUI {
 
@@ -51,6 +52,10 @@ public class GUI {
 	private File filepath;
 	private ArrayList<Person> personList;
 	private ArrayList<Building> buildingList;
+	private JTextField txtTest;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
 	
 	/**
 	 * Launch the application.
@@ -143,8 +148,41 @@ public class GUI {
 		JButton btnNewButton_1 = new JButton("Edit");
 		btnNewButton_1.setBounds(88, 127, 80, 20);
 		panel_1.add(btnNewButton_1);
+		
+		txtTest = new JTextField();
+		txtTest.setBounds(118, 8, 86, 20);
+		panel_1.add(txtTest);
+		txtTest.setEnabled(false);
+		txtTest.setEditable(false);
+		txtTest.setText("test");
+		txtTest.setColumns(10);
+		
+		textField = new JTextField();
+		textField.setText("test");
+		textField.setEnabled(false);
+		textField.setEditable(false);
+		textField.setColumns(10);
+		textField.setBounds(118, 29, 86, 20);
+		panel_1.add(textField);
+		
+		textField_1 = new JTextField();
+		textField_1.setText("test");
+		textField_1.setEnabled(false);
+		textField_1.setEditable(false);
+		textField_1.setColumns(10);
+		textField_1.setBounds(118, 50, 86, 20);
+		panel_1.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setText("test");
+		textField_2.setEnabled(false);
+		textField_2.setEditable(false);
+		textField_2.setColumns(10);
+		textField_2.setBounds(118, 73, 86, 20);
+		panel_1.add(textField_2);
 
 		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"person1", "person2"}));
 		comboBox_1.setToolTipText("Building");
 		comboBox_1.setBounds(462, 57, 100, 20);
 		frame.getContentPane().add(comboBox_1);
@@ -158,9 +196,6 @@ public class GUI {
 		JMenuItem mntmSave = new JMenuItem("Save");
 		mntmSave.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent ev) {
-		    	  	Person test = new Person("Test Name", "7/21/1998", 1, 67, "Student");
-		    	  	personList = new ArrayList<Person>();
-		    	  	personList.add(test);
 					try {
 						ReadWrite.personWrite(personList);
 					} catch (IOException e) {
