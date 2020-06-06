@@ -107,7 +107,7 @@ public class ReadWrite {
 		int comma5 = 0;
 		int comma6 = 0;
 		do {
-			if(thisLine.charAt(0) == 'P') {
+			if(thisLine.charAt(0) == 'B') {
 				for (int i = 1; i < thisLine.length(); i++) {
 					if (thisLine.charAt(i) == ',') {
 						comma1 = i;
@@ -149,15 +149,15 @@ public class ReadWrite {
 						break;
 					}
 				}
+				Objects.add(new Building(name,date,appearance,size,owner));
+			}
+			else if(thisLine.charAt(0) == 'P') {
 				
 			}
-			else if(thisLine.charAt(0) == 'B') {
-				
-			}
-			Objects.add(new Building(name,date,appearance,size,owner));
 			thisLine = file.nextLine();
 		} while(file.hasNextLine());
 		file.close();
+		System.out.println(Objects);
 		return Objects;
 	}
 	
