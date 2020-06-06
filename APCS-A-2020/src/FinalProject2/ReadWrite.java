@@ -13,13 +13,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;  
 
 public class ReadWrite {
-	String thisLine = "";
+	static String thisLine = "";
 
 	public ReadWrite() {
 		
 	}
 	
-	public ArrayList<Object> read(File filepath) throws IOException {
+	public static ArrayList<Object> read(File filepath) throws IOException {
 		ArrayList<Object> Objects = new ArrayList<Object>();
 		Scanner file = new Scanner(filepath);
 		while (file.hasNextLine()) {

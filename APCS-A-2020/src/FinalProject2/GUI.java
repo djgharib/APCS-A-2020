@@ -36,6 +36,8 @@ import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 import static java.lang.Character.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.border.BevelBorder;
@@ -45,7 +47,7 @@ import javax.swing.border.LineBorder;
 public class GUI {
 
 	private JFrame frame;
-
+	private File filepath;
 	/**
 	 * Launch the application.
 	 */
@@ -153,7 +155,13 @@ public class GUI {
 		      public void actionPerformed(ActionEvent ev) {
 		    	  final JFileChooser fc = new JFileChooser("user.dir");
 		    	  fc.showOpenDialog(fc);
-		    	  ReadWrite.read(fc.getSelectedFile());
+		    	  filepath = fc.getSelectedFile();
+		    	  try {
+					ReadWrite.read(filepath);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		      }
 		    });
 		mnNewMenu.add(mntmLoad);
