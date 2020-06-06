@@ -106,7 +106,7 @@ public class GUI {
 		panel.add(lblConstructionDate);
 		
 		JButton btnNewButton = new JButton("Edit");
-		btnNewButton.setBounds(80, 120, 80, 20);
+		btnNewButton.setBounds(88, 127, 80, 20);
 		panel.add(btnNewButton);
 
 		JPanel panel_1 = new JPanel();
@@ -135,6 +135,10 @@ public class GUI {
 		JLabel lblNewLabel_1_3 = new JLabel("Date of Birth:");
 		lblNewLabel_1_3.setBounds(32, 76, 100, 14);
 		panel_1.add(lblNewLabel_1_3);
+		
+		JButton btnNewButton_1 = new JButton("Edit");
+		btnNewButton_1.setBounds(88, 127, 80, 20);
+		panel_1.add(btnNewButton_1);
 
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setToolTipText("Building");
