@@ -25,7 +25,7 @@ public class ReadWrite {
 		while (file.hasNextLine()) {
 			thisLine = file.nextLine();
 			if(thisLine.charAt(0) == 'B') {
-				thisLine.substring(1,3);
+				System.out.println(thisLine.substring(1,3));
 			}
 			else if(thisLine.charAt(0) == 'P') {
 				
