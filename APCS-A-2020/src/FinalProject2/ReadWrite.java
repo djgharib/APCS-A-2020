@@ -21,8 +21,8 @@ public class ReadWrite {
 		
 	}
 	
-	public static ArrayList<Object> read(File filepath) throws IOException {
-		ArrayList<Object> Objects = new ArrayList<Object>();
+	public static ArrayList<Person> read(File filepath) throws IOException {
+		ArrayList<Person> Objects = new ArrayList<Person>();
 		Scanner file = new Scanner(filepath);
 		while (file.hasNextLine()) {
 			thisLine = file.nextLine();
@@ -34,7 +34,7 @@ public class ReadWrite {
 				System.out.println(thisLine.substring(2,7));
 			}
 		}
-		
+		file.close();
 		return Objects;
 	}
 	

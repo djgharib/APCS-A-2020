@@ -156,11 +156,11 @@ public class GUI {
 		menuBar.add(mnNewMenu);
 
 		JMenuItem mntmSave = new JMenuItem("Save");
-		Person test = new Person("a", "a", 1, 1, "a");
-  	  	personList.add(test);
 		mntmSave.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent ev) {
-		    	  
+		    	  	Person test = new Person("a", "a", 1, 1, "a");
+		    	  	personList = new ArrayList<Person>();
+		    	  	personList.add(test);
 		    		System.out.println(personList.get(0).toString());
 					try {
 						ReadWrite.write(personList);
@@ -179,7 +179,7 @@ public class GUI {
 		    	  fc.showOpenDialog(fc);
 		    	  filepath = fc.getSelectedFile();
 		    	  try {
-		    		  objectList = ReadWrite.read(filepath);
+		    		  personList = ReadWrite.read(filepath);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
