@@ -158,7 +158,7 @@ public class GUI {
 		      public void actionPerformed(ActionEvent ev) {
 		    	  try {
 					ReadWrite.write(objectList);
-				} catch (FileNotFoundException e) {
+				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

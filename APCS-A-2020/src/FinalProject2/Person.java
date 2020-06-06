@@ -59,4 +59,8 @@ public class Person implements Object {
 	public void setJob(String jb) {
 		job = jb;
 	}
+	
+	public String toString() {
+		return "P," + name + ","+date+","+appearance+","+height+","+job+",";
+	}
 }
