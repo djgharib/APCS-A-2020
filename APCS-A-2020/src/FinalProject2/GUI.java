@@ -154,6 +154,7 @@ public class GUI {
 		menuBar.add(mnNewMenu);
 
 		JMenuItem mntmSave = new JMenuItem("Save");
+		objectList.add(new Person("a", "a", 1, 1, "a"));
 		mntmSave.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent ev) {
 		    	  try {
