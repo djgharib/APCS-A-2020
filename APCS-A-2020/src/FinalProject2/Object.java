@@ -7,5 +7,5 @@ public interface Object {
 	public void setName(String nm);
 	public void setDate(String dt);
 	public void setAppearance(int app);
-	
+	public String toString(); 
 }
