@@ -13,7 +13,7 @@ public class ReadWrite {
 		
 	}
 	
-	public void read() {
+	public ArrayList<Object> read() {
 		
 	}
 }
