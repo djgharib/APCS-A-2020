@@ -38,7 +38,7 @@ public class ReadWrite {
 		return Objects;
 	}
 	
-	public static void write(ArrayList<Object> objectList) throws IOException {
+	public static void write(ArrayList<Person> objectList) throws IOException {
 		PrintWriter printWriter = new PrintWriter("Info.dat");
 	    for(int i = 0; i<objectList.size();i++) {
 	    	printWriter.println(objectList.get(i).toString());

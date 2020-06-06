@@ -49,7 +49,9 @@ public class GUI {
 
 	private JFrame frame;
 	private File filepath;
-	private ArrayList<Object> objectList;
+	private ArrayList<Person> personList;
+	private ArrayList<Building> buildingList;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -154,15 +156,18 @@ public class GUI {
 		menuBar.add(mnNewMenu);
 
 		JMenuItem mntmSave = new JMenuItem("Save");
+		Person test = new Person("a", "a", 1, 1, "a");
+  	  	personList.add(test);
 		mntmSave.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent ev) {
-		    	  try {
-		    		objectList.add(new Person("a", "a", 1, 1, "a"));
-					ReadWrite.write(objectList);
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+		    	  
+		    		System.out.println(personList.get(0).toString());
+					try {
+						ReadWrite.write(personList);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 		      }
 		    });
 		mnNewMenu.add(mntmSave);
