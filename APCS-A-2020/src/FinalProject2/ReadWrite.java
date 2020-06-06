@@ -27,29 +27,26 @@ public class ReadWrite {
 		thisLine = file.nextLine();
 		String name = "";
 		String date = "";
-		String job = "";
 		int appearance = 0;
 		int height = 0;
+		String job = "";
 		int comma1 = 0;
 		int comma2 = 0;
 		int comma3 = 0;
 		int comma4 = 0;
 		int comma5 = 0;
 		int comma6 = 0;
-		int lineCount = 0;
 		do {
 			if(thisLine.charAt(0) == 'P') {
 				for (int i = 1; i < thisLine.length(); i++) {
 					if (thisLine.charAt(i) == ',') {
 						comma1 = i;
-						System.out.println(comma1);
 						break;
 					}
 				}
 				for (int i = comma1+1; i < thisLine.length(); i++) {
 					if (thisLine.charAt(i) == ',') {
 						comma2 = i;
-						System.out.println(comma2);
 						name = thisLine.substring(comma1+1, comma2);
 						break;
 					}
@@ -57,7 +54,6 @@ public class ReadWrite {
 				for (int i = comma2+1; i < thisLine.length(); i++) {
 					if (thisLine.charAt(i) == ',') {
 						comma3 = i;
-						System.out.println(comma3);
 						date = thisLine.substring(comma2+1, comma3);
 						break;
 					}
@@ -65,7 +61,6 @@ public class ReadWrite {
 				for (int i = comma3+1; i < thisLine.length(); i++) {
 					if (thisLine.charAt(i) == ',') {
 						comma4 = i;
-						System.out.println(comma4);
 						appearance = Integer.parseInt(thisLine.substring(comma3+1, comma4));
 						break;
 					}
@@ -73,7 +68,6 @@ public class ReadWrite {
 				for (int i = comma4+1; i < thisLine.length(); i++) {
 					if (thisLine.charAt(i) == ',') {
 						comma5 = i;
-						System.out.println(comma5);
 						height = Integer.parseInt(thisLine.substring(comma4+1, comma5));
 						break;
 					}
@@ -81,7 +75,6 @@ public class ReadWrite {
 				for (int i = comma5+1; i < thisLine.length(); i++) {
 					if (thisLine.charAt(i) == ';') {
 						comma6 = i;
-						System.out.println(comma6);
 						job = thisLine.substring(comma5+1, comma6);
 						break;
 					}
@@ -91,36 +84,83 @@ public class ReadWrite {
 			else if(thisLine.charAt(0) == 'B') {
 				
 			}
-			Objects.get(lineCount).setName(name);
-			Objects.get(lineCount).setDate(date);
-			Objects.get(lineCount).setAppearance(appearance);
-			Objects.get(lineCount).setHeight(height);
-			Objects.get(lineCount).setJob(job);
-			
-			System.out.println(Objects.get(lineCount));
-			lineCount++;
+			Objects.add(new Person(name,date,appearance,height,job));
 			thisLine = file.nextLine();
 		} while(file.hasNextLine());
 		file.close();
 		return Objects;
 	}
 	
-	/*public static ArrayList<Building> buildingRead(File filepath) throws IOException {
+	public static ArrayList<Building> buildingRead(File filepath) throws IOException {
 		ArrayList<Building> Objects = new ArrayList<Building>();
+		Building test = new Building("","",0,0,"");
 		Scanner file = new Scanner(filepath);
-		while (file.hasNextLine()) {
+		thisLine = file.nextLine();
+		String name = "";
+		String date = "";
+		int appearance = 0;
+		int size = 0;
+		String owner = "";
+		int comma1 = 0;
+		int comma2 = 0;
+		int comma3 = 0;
+		int comma4 = 0;
+		int comma5 = 0;
+		int comma6 = 0;
+		do {
+			if(thisLine.charAt(0) == 'P') {
+				for (int i = 1; i < thisLine.length(); i++) {
+					if (thisLine.charAt(i) == ',') {
+						comma1 = i;
+						break;
+					}
+				}
+				for (int i = comma1+1; i < thisLine.length(); i++) {
+					if (thisLine.charAt(i) == ',') {
+						comma2 = i;
+						name = thisLine.substring(comma1+1, comma2);
+						break;
+					}
+				}
+				for (int i = comma2+1; i < thisLine.length(); i++) {
+					if (thisLine.charAt(i) == ',') {
+						comma3 = i;
+						date = thisLine.substring(comma2+1, comma3);
+						break;
+					}
+				}
+				for (int i = comma3+1; i < thisLine.length(); i++) {
+					if (thisLine.charAt(i) == ',') {
+						comma4 = i;
+						appearance = Integer.parseInt(thisLine.substring(comma3+1, comma4));
+						break;
+					}
+				}
+				for (int i = comma4+1; i < thisLine.length(); i++) {
+					if (thisLine.charAt(i) == ',') {
+						comma5 = i;
+						size = Integer.parseInt(thisLine.substring(comma4+1, comma5));
+						break;
+					}
+				}
+				for (int i = comma5+1; i < thisLine.length(); i++) {
+					if (thisLine.charAt(i) == ';') {
+						comma6 = i;
+						owner = thisLine.substring(comma5+1, comma6);
+						break;
+					}
+				}
+				
+			}
+			else if(thisLine.charAt(0) == 'B') {
+				
+			}
+			Objects.add(new Building(name,date,appearance,size,owner));
 			thisLine = file.nextLine();
-			if(thisLine.charAt(0) == 'B') {
-				
-				Objects.add(new Building(thisLine.substring(comma1, comma2),thisLine.substring(comma2, comma3),Integer.parseInt(thisLine.substring(comma3, comma4)),Integer.parseInt(thisLine.substring(comma4, comma5)),thisLine.substring(comma5, end)));
-			}
-			else if(thisLine.charAt(0) == 'P') {
-				
-			}
-		}
+		} while(file.hasNextLine());
 		file.close();
 		return Objects;
-	}*/
+	}
 	
 	public static void personWrite(ArrayList<Person> personList) throws IOException {
 		PrintWriter printWriter = new PrintWriter("C:\\Users\\Daniel\\Desktop\\Eclipse Workspace\\APCS-A-2020\\APCS-A-2020\\src\\FinalProject2\\Info.dat");
