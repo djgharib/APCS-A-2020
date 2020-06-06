@@ -197,7 +197,7 @@ public class GUI {
 		mntmSave.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent ev) {
 					try {
-						ReadWrite.personWrite(personList);
+						ReadWrite.write(personList,buildingList);
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -214,6 +214,7 @@ public class GUI {
 		    	  filepath = fc.getSelectedFile();
 		    	  try {
 		    		  personList = ReadWrite.personRead(filepath);
+		    		  buildingList = ReadWrite.buildingRead(filepath);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
