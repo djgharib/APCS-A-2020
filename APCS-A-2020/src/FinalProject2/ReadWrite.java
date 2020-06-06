@@ -19,9 +19,9 @@ public class ReadWrite {
 		
 	}
 	
-	public ArrayList<Object> read(String filepath) throws IOException {
+	public ArrayList<Object> read(File filepath) throws IOException {
 		ArrayList<Object> Objects = new ArrayList<Object>();
-		Scanner file = new Scanner(new File(filepath));
+		Scanner file = new Scanner(filepath);
 		while (file.hasNextLine()) {
 			thisLine = file.nextLine();
 			if(thisLine.charAt(0) == 'B') {

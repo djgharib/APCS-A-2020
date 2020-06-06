@@ -153,7 +153,7 @@ public class GUI {
 		      public void actionPerformed(ActionEvent ev) {
 		    	  final JFileChooser fc = new JFileChooser("user.dir");
 		    	  fc.showOpenDialog(fc);
-		    	  ReadWrite.read(fc.getSelectedFile().toString());
+		    	  ReadWrite.read(fc.getSelectedFile());
 		      }
 		    });
 		mnNewMenu.add(mntmLoad);
