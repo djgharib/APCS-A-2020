@@ -9,7 +9,7 @@ public class Person implements Object {
 	
 	
 	public Person() {
-		
+		this("","",0,0,"");
 	}
 	
 	public Person( String nm, String dt, int app, int hei, String jb) {
