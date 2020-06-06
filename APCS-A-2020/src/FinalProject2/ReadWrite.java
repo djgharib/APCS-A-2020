@@ -26,19 +26,22 @@ public class ReadWrite {
 		while (file.hasNextLine()) {
 			thisLine = file.nextLine();
 			if(thisLine.charAt(0) == 'B') {
-				System.out.println(thisLine.substring(1,3));
+				
+				Objects.add(new Person("","",1,1,""));
 			}
 			else if(thisLine.charAt(0) == 'P') {
-				System.out.println(thisLine.substring(1,3));
+				System.out.println(thisLine.substring(2,7));
 			}
 		}
 		
 		return Objects;
 	}
 	
-	public void write(ArrayList<Object> objectList) throws FileNotFoundException {
-		try (PrintWriter out = new PrintWriter("Info.dat")) {
-		    out.println();
+	public static void write(ArrayList<Object> objectList) throws FileNotFoundException {
+		try (PrintWriter writer = new PrintWriter("Info.dat")) {
+		    for(int i = 0; i<objectList.size(); i++) {
+		    	writer.print(objectList.get(i).getAppearance());
+		    }
 		}
 	}
 }

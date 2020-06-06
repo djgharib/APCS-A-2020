@@ -48,6 +48,7 @@ public class GUI {
 
 	private JFrame frame;
 	private File filepath;
+	private ArrayList<Object> objectList;
 	/**
 	 * Launch the application.
 	 */
@@ -154,7 +155,7 @@ public class GUI {
 		JMenuItem mntmSave = new JMenuItem("Save");
 		mntmSave.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent ev) {
-		    	  
+		    	  ReadWrite.write(objectList);
 		      }
 		    });
 		mnNewMenu.add(mntmSave);
@@ -166,7 +167,7 @@ public class GUI {
 		    	  fc.showOpenDialog(fc);
 		    	  filepath = fc.getSelectedFile();
 		    	  try {
-					ReadWrite.read(filepath);
+		    		  objectList = ReadWrite.read(filepath);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
