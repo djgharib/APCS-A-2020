@@ -34,4 +34,8 @@ public class ReadWrite {
 		
 		return Objects;
 	}
+	
+	public void write(ArrayList<Object> objectList) {
+		
+	}
 }

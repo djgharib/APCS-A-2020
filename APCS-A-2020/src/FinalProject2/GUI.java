@@ -67,6 +67,7 @@ public class GUI {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		//GUI work here was done with WindowBuilder software for Eclipse
 		frame = new JFrame();
 		frame.setBounds(100, 100, 720, 540);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
