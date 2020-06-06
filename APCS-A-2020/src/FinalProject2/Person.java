@@ -61,6 +61,6 @@ public class Person implements Object {
 	}
 	
 	public String toString() {
-		return "P," + name + ","+date+","+appearance+","+height+","+job+",";
+		return "P," + name + ","+date+","+appearance+","+height+","+job+";";
 	}
 }
