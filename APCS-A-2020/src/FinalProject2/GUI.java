@@ -9,6 +9,8 @@ import java.awt.Font;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.JDesktopPane;
+import javax.swing.JFileChooser;
+
 import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -115,7 +117,7 @@ public class GUI {
 		lblNewLabel_1.setBounds(32, 11, 50, 14);
 		panel_1.add(lblNewLabel_1);
 
-		JLabel lblNewLabel_1_1 = new JLabel("Age:");
+		JLabel lblNewLabel_1_1 = new JLabel("Job:");
 		lblNewLabel_1_1.setBounds(32, 32, 50, 14);
 		panel_1.add(lblNewLabel_1_1);
 
@@ -138,10 +140,22 @@ public class GUI {
 		JMenu mnNewMenu = new JMenu("File");
 		menuBar.add(mnNewMenu);
 
-		JMenuItem mntmNewMenuItem = new JMenuItem("Save");
-		mnNewMenu.add(mntmNewMenuItem);
+		JMenuItem mntmSave = new JMenuItem("Save");
+		mntmSave.addActionListener(new ActionListener() {
+		      public void actionPerformed(ActionEvent ev) {
+		    	  
+		      }
+		    });
+		mnNewMenu.add(mntmSave);
 
 		JMenuItem mntmLoad = new JMenuItem("Load");
+		mntmLoad.addActionListener(new ActionListener() {
+		      public void actionPerformed(ActionEvent ev) {
+		    	  final JFileChooser fc = new JFileChooser("user.dir");
+		    	  fc.showOpenDialog(fc);
+		      }
+		    });
 		mnNewMenu.add(mntmLoad);
 	}
+	
 }
