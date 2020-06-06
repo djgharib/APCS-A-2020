@@ -164,7 +164,6 @@ public class ReadWrite {
 	public static void write(ArrayList<Person> personList, ArrayList<Building> buildingList) throws IOException {
 		PrintWriter printWriter = new PrintWriter("C:\\Users\\Daniel\\Desktop\\Eclipse Workspace\\APCS-A-2020\\APCS-A-2020\\src\\FinalProject2\\Info.dat");
 	    for(int i = 0; i<personList.size();i++) {
-	    	
 	    		printWriter.println(personList.get(i).toString());
 	    }
 	    for(int i = 0; i<buildingList.size();i++) {
