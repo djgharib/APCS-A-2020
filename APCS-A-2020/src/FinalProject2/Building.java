@@ -61,6 +61,6 @@ public class Building implements Object {
 	}
 	
 	public String toString() {
-		return "P," + name + ","+date+","+appearance+","+size+","+owner+",";
+		return "B," + name + ","+date+","+appearance+","+size+","+owner+",";
 	}
 }

@@ -161,7 +161,6 @@ public class GUI {
 		    	  	Person test = new Person("a", "a", 1, 1, "a");
 		    	  	personList = new ArrayList<Person>();
 		    	  	personList.add(test);
-		    		System.out.println(personList.get(0).toString());
 					try {
 						ReadWrite.write(personList);
 					} catch (IOException e) {
