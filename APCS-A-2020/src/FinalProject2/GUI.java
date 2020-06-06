@@ -148,10 +148,6 @@ public class GUI {
 		comboBox_1.setToolTipText("Building");
 		comboBox_1.setBounds(462, 57, 100, 20);
 		frame.getContentPane().add(comboBox_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("Database by Daniel Gharib");
-		lblNewLabel_2.setBounds(10, 11, 170, 14);
-		frame.getContentPane().add(lblNewLabel_2);
 
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
