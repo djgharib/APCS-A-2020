@@ -24,19 +24,39 @@ public class Building implements Object {
 		return name;
 	}
 	
+	public void setName(String nm) {
+		name = nm;
+	}
+	
 	public String getDate() {
 		return date;
+	}
+	
+	public void setDate(String dt) {
+		date = dt;
 	}
 	
 	public int getAppearance() {
 		return appearance;
 	}
 	
+	public void setAppearance(int app) {
+		appearance = app;
+	}
+	
 	public int getSize() {
 		return size;
 	}
 	
+	public void setSize(int sz) {
+		size = sz;
+	}
+	
 	public String getOwner() {
 		return owner;
+	}
+	
+	public void setOwner(String own) {
+		owner = own;
 	}
 }
