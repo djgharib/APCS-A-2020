@@ -158,7 +158,7 @@ public class GUI {
 		JMenuItem mntmSave = new JMenuItem("Save");
 		mntmSave.addActionListener(new ActionListener() {
 		      public void actionPerformed(ActionEvent ev) {
-		    	  	Person test = new Person("a", "a", 1, 1, "a");
+		    	  	Person test = new Person("Test Name", "7/21/1998", 1, 67, "Student");
 		    	  	personList = new ArrayList<Person>();
 		    	  	personList.add(test);
 					try {

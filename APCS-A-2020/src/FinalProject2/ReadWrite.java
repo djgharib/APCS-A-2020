@@ -39,8 +39,9 @@ public class ReadWrite {
 	}
 	
 	public static void write(ArrayList<Person> personList) throws IOException {
-		PrintWriter printWriter = new PrintWriter("Info.dat");
+		PrintWriter printWriter = new PrintWriter("C:\\Users\\Daniel\\Desktop\\Eclipse Workspace\\APCS-A-2020\\APCS-A-2020\\src\\FinalProject2\\Info.dat");
 	    for(int i = 0; i<personList.size();i++) {
+	    	System.out.println(personList.get(i).toString());
 	    	printWriter.println(personList.get(i).toString());
 	    }
 	    printWriter.close();
