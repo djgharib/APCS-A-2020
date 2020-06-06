@@ -10,6 +10,7 @@ import Starfighter.Alien;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;  
 
@@ -37,11 +38,8 @@ public class ReadWrite {
 		return Objects;
 	}
 	
-	public static void write(ArrayList<Object> objectList) throws FileNotFoundException {
-		try (PrintWriter writer = new PrintWriter("data\\Info.dat")) {
-			writer.print("test");
-		    for(int i = 0; i<objectList.size(); i++) {
-		    }
-		}
+	public static void write(ArrayList<Object> objectList) throws IOException {
+		PrintWriter printWriter = new PrintWriter("data\\Info.dat");
+	    printWriter.print("test");
 	}
 }
