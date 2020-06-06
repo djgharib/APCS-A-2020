@@ -41,5 +41,6 @@ public class ReadWrite {
 	public static void write(ArrayList<Object> objectList) throws IOException {
 		PrintWriter printWriter = new PrintWriter("data\\Info.dat");
 	    printWriter.print("test");
+	    printWriter.close();
 	}
 }
